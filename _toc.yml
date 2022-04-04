@@ -4,5 +4,7 @@
 - file: intro
 - file: content
   sections:
+    - file: 01_business_case
+    - file: 02_data_analysis
     - file: markdown
     - file: notebooks
