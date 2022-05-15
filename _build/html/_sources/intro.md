@@ -1,7 +1,6 @@
-Welcome to your Jupyter Book
+Welcome to my MLOps documentation
 ============================
 
-This is a small sample book to give you a feel for how book content is
-structured.
+This is a book to give you an overview about my progess of the MLOps-project concerning the "Used car prices"-Dataset.
 
-Check out the content pages bundled with this sample book to get started.
+Check out the full domumentation on the content pages.
