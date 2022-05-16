@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Load Packages
+# # 1st Keras model
+
+# ### Load Packages
 
 # In[1]:
 
@@ -455,13 +457,3 @@ predictions = reloaded_model.predict(input_dict)
 
 predictions
 
-
-# 
-# ```{toctree}
-# :hidden:
-# :titlesonly:
-# 
-# 
-# 05_deployment
-# ```
-# 

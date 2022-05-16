@@ -11,8 +11,6 @@
 # :titlesonly:
 # 
 # 
-# model_1_SK-learn
-# model_2_SK-learn
-# model_1_Keras
+# 05_deployment
 # ```
 # 

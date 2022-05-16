@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # SK-learn Model
+# # 2nd SK-learn model
 
 # ##  Data
 # 

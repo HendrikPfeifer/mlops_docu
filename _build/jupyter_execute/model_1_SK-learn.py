@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # First Model
+# # 1st SK-learn model
 # 
 # #### First try including sk-learn model and EDA
 
