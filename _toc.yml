@@ -13,6 +13,6 @@ chapters:
       sections:
       - file: model_1_SK-learn
       - file: model_2_SK-learn
-      - file: model_3_SK-learn
-      sections:
-      - file: 05_deployment
+      - file: model_1_Keras
+        sections:
+        - file: 05_deployment
