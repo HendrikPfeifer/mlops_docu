@@ -1,7 +1,7 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-- file: intro
+- file: welcome
 - file: content
   sections:
     - file: 01_business_case
