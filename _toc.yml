@@ -7,5 +7,9 @@
     - file: 01_business_case
     - file: 02_data_analysis
     - file: 03_data_preperation
-    - file: markdown
-    - file: notebooks
+    - file: 04_models
+      sections:
+      - file: model_1_SK-learn
+      - file: model_2_SK-learn
+      - file: model_3_SK-learn
+    - file: 05_deployment

@@ -5,6 +5,8 @@
 # 
 # ### Here you can find the exploratory data analysis (EDA) to understand more about the "used car prices"-dataset.
 
+# ### Load packages
+
 # In[1]:
 
 
@@ -16,65 +18,161 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-# ## import dataset
+# ### Import dataset
 
 # In[2]:
 
 
+# import dataset and save it as df
+
 df = pd.read_csv("car_prices.csv", on_bad_lines="skip")
 
+# on_bad_lines="skip" otherwise it caused a problem
 
-# In[86]:
 
+# In[3]:
+
+
+# show first two rows to check if the dataset is imported correctly 
 
 df.head(2)
 
 
-# In[87]:
+# - year = year the car was put into the dataset           
+# - make = brand of the car           
+# - model = cars model            
+# - trim = cars version            
+# - body = cars type           
+# - transmission = cars drivetrain     
+# - vin = code            
+# - state = state where the car was sold           
+# - condition = condition of the car 0.0 - 5.0       
+# - odometer = miles of the car      
+# - color = cars color           
+# - interior = interior color         
+# - seller = seller           
+# - mmr = ratingprice              
+# - sellingprice = sellingprice     
+# - saledate = date of sale 
 
+# In[4]:
+
+
+# print how many observations and columns the dataset exists of
 
 print(f"We have {len(df.index):,} observations and {len(df.columns)} columns in our dataset.")
 
 
-# In[88]:
+# In[5]:
 
+
+# overview
+
+df.info()
+
+
+# In[6]:
+
+
+# print the names of all 16 coulmns
 
 df.columns
 
 
-# In[89]:
+# In[7]:
 
+
+# print datatype of the variables
 
 df.dtypes
 
 
-# In[90]:
+# In[8]:
+
+
+# print missing values
+
+df.isna().sum()
+
+# in transmission are relatively many missing values
+
+
+# In[9]:
+
+
+# drop missing vales (dataset is still big enough)
+
+df = df.dropna()
+
+
+# In[10]:
+
+
+# show missing values (missing values - if present - will be displayed in yellow )
+sns.heatmap(df.isnull(), yticklabels=False, cbar=False, cmap='viridis');
+
+
+# In[11]:
+
+
+# show if there are still missing values
+
+df.isna().sum()
+
+
+# In[12]:
+
+
+# rename colums for better understanding (as described above)
+
+df = df.rename(columns={
+"make" : "brand",
+"body" : "type",
+"trim" : "version",
+"transmission" : "drivetrain",
+"vin" : "code",
+"odometer" : "miles",
+"mmr" : "ratingprice"} 
+    )
+
+
+# In[13]:
 
 
 df.info()
 
 
-# In[95]:
+# In[14]:
 
 
-df.dtypes
+# transform into lowercase
+
+df["brand"] = df["brand"].str.lower()
+df["model"] = df["model"].str.lower()
+df["type"] = df["type"].str.lower()
+df["drivetrain"] = df["drivetrain"].str.lower()
+df["state"] = df["state"].str.lower()
+df["version"] = df["version"].str.lower()
+df["color"] = df["color"].str.lower()
+df["interior"] = df["interior"].str.lower()
+df["seller"] = df["seller"].str.lower()
 
 
-# In[98]:
+# In[15]:
 
 
-df.isna().sum()
+df.head(2)
 
 
-# # Alles in lowercase umwandeln
-
-# # Kategorial oder Numerisch?
+# # Categorial or numeric?
 # 
 # * year = categorial
 # * brand = categorial
 # * model = categorial
+# * version = categorial
 # * type = categorial
 # * drivetrain = categorial
+# * code = categorial
 # * state = categorial
 # * condition = categorial
 # * miles = numeric
@@ -85,39 +183,31 @@ df.isna().sum()
 # * sellingprice = numeric
 # * saledate = categorial
 
-# In[102]:
+# In[16]:
 
 
-# In kategorische Variablen umwandeln:
+# transform into categorial variables
 
-for cat in ["year", "brand", "model", "type", "drivetrain", "state", "condition", "color", "interior", "seller", "saledate"]:
+for cat in ["year", "brand", "model", "version", "type", "drivetrain", "code", "state", "condition", "color", "interior", "seller", "saledate"]:
     df[cat] = df[cat].astype("category")
 
 
-# In[103]:
+# In[17]:
 
 
 df.dtypes
 
 
-# In[104]:
+# In[18]:
 
 
 df.describe(include="category").T
 
 
-# In[105]:
+# In[19]:
 
 
-df.describe()
-
-
-# # Variable lists
-# 
-# Furthermore, we prepare our data for the following processes of data splitting and building of data pipelines.
-
-# In[106]:
-
+# crating variable list for numeric and categorial variables
 
 # list of all numerical data
 list_num = df.select_dtypes(include=[np.number]).columns.tolist()
@@ -128,73 +218,18 @@ list_cat = df.select_dtypes(include=['category']).columns.tolist()
 print(list_num, list_cat)
 
 
-# In[107]:
+# ## Categorical Data
+
+# In[20]:
 
 
-# define outcome variable as y_label
-y_label = 'sellingprice'
-
-# select features
-features = df.drop(columns=[y_label]).columns.tolist()
-
-# create feature data for data splitting
-X = df[features]
-
-# list of numeric features
-feat_num = X.select_dtypes(include=[np.number]).columns.tolist()
-
-# list of categorical features
-feat_cat = X.select_dtypes(include=['category']).columns.tolist() 
-
-# create response for data splitting
-y = df[y_label]
+sns.catplot(y="brand", kind="count", palette="ch:.25", data=df)
 
 
-# In[108]:
+# In[21]:
 
 
-print(feat_num)
-
-
-# # Train and test split
-
-# In[109]:
-
-
-from sklearn.model_selection import train_test_split
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-
-# # Data exploration set
-# 
-# We make a copy of the training data since we don’t want to alter our data during data exploration. We will use this data for our exploratory data analysis.
-
-# In[110]:
-
-
-df_train = pd.DataFrame(X_train.copy())
-df_train = df_train.join(pd.DataFrame(y_train))
-
-
-# # Analyze data 
-# ## Categorical data
-
-# In[111]:
-
-
-df_train.describe(include="category").T 
-
-
-# In[112]:
-
-
-for i in list_cat:
-    print(i, "\n", df_train[i].value_counts())
-
-
-# In[113]:
-
+# print plots for top 10 of each variable
 
 for i in list_cat:
 
@@ -210,7 +245,7 @@ for i in list_cat:
     plt.show();
 
 
-# In[114]:
+# In[22]:
 
 
 # Numercial gruped by categorical
@@ -221,116 +256,70 @@ for i in list_cat:
 
 # ## Numerical data
 
-# In[115]:
+# In[30]:
 
 
 # summary of numerical attributes
-df_train.describe().round(2).T
+df.describe().round(2).T
 
 
-# In[116]:
+# In[31]:
 
 
 # histograms
-df_train.hist(figsize=(20, 15));
+df.hist(figsize=(20, 15));
 
 
-# # Relationships
-# ## Correlation with response
-# 
-# Detect the relationship between each predictor and the response:
-# 
-
-# In[117]:
-
-
-#sns.pairplot(data=df_train, y_vars=y_label, x_vars=features);
-
-
-# In[118]:
-
-
-# pairplot with one categorical variable
-#sns.pairplot(data=df_train, y_vars=y_label, x_vars=features);
-
-
-# In[119]:
-
-
-# inspect correlation
-#corr = df_train.corr()
-#corr_matrix[y_label].sort_values(ascending=False)
-
-print(df_train.corr())
-sns.heatmap(df_train.corr())
-
-
-# In[120]:
-
-
-# Data exploration
+# In[34]:
 
 
 sns.set_theme(style="ticks", color_codes=True)
 
 
-# In[121]:
+# In[33]:
 
 
-sns.pairplot(df_train);
+sns.pairplot(df);
 
 
-# In[122]:
+# In[38]:
 
 
-sns.histplot(data=df_train, x="miles")
+sns.scatterplot(data=df, x="miles", y="sellingprice")
 
 
-# In[123]:
+# In[46]:
 
 
-# sns.histplot(data=df, x="ratingprice")
+sns.histplot(data=df, x="ratingprice")
 
 
 # In[124]:
 
 
-sns.histplot(data=df_train, x="sellingprice")
+sns.histplot(data=df, x="sellingprice")
 
 
-# In[125]:
+# # Relationships
+# ## Correlation
+# 
+# Detect the relationships between variables
+# 
+
+# In[47]:
 
 
-#Kategorisch
+# inspect correlation
 
-sns.countplot(x="brand", data=df_train)
-
-
-# In[126]:
+print(df.corr())
+sns.heatmap(df.corr())
 
 
-sns.countplot(x="year", data=df_train)
-
-
-# # Fehlende Daten
-
-# In[127]:
-
-
-# show missing values (missing values - if present - will be displayed in yellow )
-sns.heatmap(df_train.isnull(),yticklabels=False,cbar=False,cmap='viridis');
-
-
-# In[128]:
-
-
-# absolute number of missing values
-print(df_train.isnull().sum())
-
-
-# In[129]:
-
-
-# percentage of missing values
-print(df_train.isnull().sum() * 100 / len(df))
-
+# # Conclusion:
+# 
+# 
+# * ratingprice and sellingprice have a very high correlation, therefore I would remove the column "ratingprice" from the dataset.
+# * code is not necessary, therefore I would remove the column "code" from the dataset.
+# * saledate is also unnecessary, therefore I would remove the column "saledate" from the dataset.
+# 
+# * there are almost only automatic cars in "drivetrain" - not sure if I need this column for my model
