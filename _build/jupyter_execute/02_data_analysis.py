@@ -223,12 +223,6 @@ print(list_num, list_cat)
 # In[20]:
 
 
-sns.catplot(y="brand", kind="count", palette="ch:.25", data=df)
-
-
-# In[21]:
-
-
 # print plots for top 10 of each variable
 
 for i in list_cat:
@@ -245,56 +239,56 @@ for i in list_cat:
     plt.show();
 
 
-# In[22]:
+# In[21]:
 
 
 # Numercial gruped by categorical
 # median
 for i in list_cat:
-    print(df_train.groupby(i).median().round(2).T)
+    print(df.groupby(i).median().round(2).T)
 
 
 # ## Numerical data
 
-# In[30]:
+# In[22]:
 
 
 # summary of numerical attributes
 df.describe().round(2).T
 
 
-# In[31]:
+# In[23]:
 
 
 # histograms
 df.hist(figsize=(20, 15));
 
 
-# In[34]:
+# In[24]:
 
 
 sns.set_theme(style="ticks", color_codes=True)
 
 
-# In[33]:
+# In[25]:
 
 
 sns.pairplot(df);
 
 
-# In[38]:
+# In[26]:
 
 
 sns.scatterplot(data=df, x="miles", y="sellingprice")
 
 
-# In[46]:
+# In[27]:
 
 
 sns.histplot(data=df, x="ratingprice")
 
 
-# In[124]:
+# In[28]:
 
 
 sns.histplot(data=df, x="sellingprice")
@@ -306,7 +300,7 @@ sns.histplot(data=df, x="sellingprice")
 # Detect the relationships between variables
 # 
 
-# In[47]:
+# In[29]:
 
 
 # inspect correlation

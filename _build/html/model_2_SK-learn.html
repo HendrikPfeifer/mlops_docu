@@ -1,0 +1,2373 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>SK-learn Model &#8212; MLOps Project SoSe 2022 - Documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/togglebutton.js"></script>
+    <script type="text/javascript" src="_static/clipboard.min.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <script type="text/javascript">var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script type="text/javascript" src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" type="text/javascript" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script type="text/javascript">
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Deployment" href="05_deployment.html" />
+    <link rel="prev" title="First Model" href="model_1_SK-learn.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/hdm-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MLOps Project SoSe 2022 - Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="welcome.html">
+   Welcome to the documentation
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="content.html">
+   Content of the documentation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_business_case.html">
+     Business Case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_data_analysis.html">
+     Data analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_data_preperation.html">
+     Data preperation
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="04_models.html">
+     Models
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="model_1_SK-learn.html">
+       First Model
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       SK-learn Model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_deployment.html">
+     Deployment
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/model_2_SK-learn.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodel_2_SK-learn.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/model_2_SK-learn.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   SK-learn Model
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data">
+     Data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-packages">
+     Load packages
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-dataset">
+     Import Dataset
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-inspection">
+     Data inspection
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-transformation">
+     Data transformation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorial-or-numeric">
+   Categorial or numeric?
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-splitting">
+     Data splitting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploratory-data-analysis">
+     Exploratory data analysis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlation-analysis">
+     Correlation analysis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-preprocessing-pipeline">
+     Data preprocessing pipeline
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-regression">
+     Simple regression
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Data splitting
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modeling">
+     Modeling
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation-with-training-data">
+     Evaluation with training data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation-with-test-data">
+     Evaluation with test data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-regression">
+   Multiple Regression
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="sk-learn-model">
+<h1>SK-learn Model<a class="headerlink" href="#sk-learn-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="load-packages">
+<h2>Load packages<a class="headerlink" href="#load-packages" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tools.tools</span> <span class="kn">import</span> <span class="n">add_constant</span>  
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="import-dataset">
+<h2>Import Dataset<a class="headerlink" href="#import-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;car_prices.csv&quot;</span><span class="p">,</span> <span class="n">on_bad_lines</span><span class="o">=</span><span class="s2">&quot;skip&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">raw_dataset</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-inspection">
+<h2>Data inspection<a class="headerlink" href="#data-inspection" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>make</th>
+      <th>model</th>
+      <th>trim</th>
+      <th>body</th>
+      <th>transmission</th>
+      <th>vin</th>
+      <th>state</th>
+      <th>condition</th>
+      <th>odometer</th>
+      <th>color</th>
+      <th>interior</th>
+      <th>seller</th>
+      <th>mmr</th>
+      <th>sellingprice</th>
+      <th>saledate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>Kia</td>
+      <td>Sorento</td>
+      <td>LX</td>
+      <td>SUV</td>
+      <td>automatic</td>
+      <td>5xyktca69fg566472</td>
+      <td>ca</td>
+      <td>5.0</td>
+      <td>16639.0</td>
+      <td>white</td>
+      <td>black</td>
+      <td>kia motors america, inc</td>
+      <td>20500</td>
+      <td>21500</td>
+      <td>Tue Dec 16 2014 12:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015</td>
+      <td>Kia</td>
+      <td>Sorento</td>
+      <td>LX</td>
+      <td>SUV</td>
+      <td>automatic</td>
+      <td>5xyktca69fg561319</td>
+      <td>ca</td>
+      <td>5.0</td>
+      <td>9393.0</td>
+      <td>white</td>
+      <td>beige</td>
+      <td>kia motors america, inc</td>
+      <td>20800</td>
+      <td>21500</td>
+      <td>Tue Dec 16 2014 12:30:00 GMT-0800 (PST)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 558811 entries, 0 to 558810
+Data columns (total 16 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   year          558811 non-null  int64  
+ 1   make          548510 non-null  object 
+ 2   model         548412 non-null  object 
+ 3   trim          548160 non-null  object 
+ 4   body          545616 non-null  object 
+ 5   transmission  493458 non-null  object 
+ 6   vin           558811 non-null  object 
+ 7   state         558811 non-null  object 
+ 8   condition     547017 non-null  float64
+ 9   odometer      558717 non-null  float64
+ 10  color         558062 non-null  object 
+ 11  interior      558062 non-null  object 
+ 12  seller        558811 non-null  object 
+ 13  mmr           558811 non-null  int64  
+ 14  sellingprice  558811 non-null  int64  
+ 15  saledate      558811 non-null  object 
+dtypes: float64(2), int64(3), object(11)
+memory usage: 68.2+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show missing values (missing values - if present - will be displayed in yellow)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> 
+            <span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+            <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_2_SK-learn_10_0.png" src="_images/model_2_SK-learn_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year                0
+make            10301
+model           10399
+trim            10651
+body            13195
+transmission    65353
+vin                 0
+state               0
+condition       11794
+odometer           94
+color             749
+interior          749
+seller              0
+mmr                 0
+sellingprice        0
+saledate            0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-transformation">
+<h2>Data transformation<a class="headerlink" href="#data-transformation" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop column with too many missing values</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;transmission&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># drop remaining row with one missing value</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drop irrelevant features</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;trim&#39;</span><span class="p">,</span> <span class="s1">&#39;vin&#39;</span><span class="p">,</span> <span class="s1">&#39;mmr&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year            0
+make            0
+model           0
+body            0
+state           0
+condition       0
+odometer        0
+color           0
+interior        0
+seller          0
+sellingprice    0
+saledate        0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rename columns</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+<span class="s2">&quot;make&quot;</span> <span class="p">:</span> <span class="s2">&quot;brand&quot;</span><span class="p">,</span>
+<span class="s2">&quot;body&quot;</span> <span class="p">:</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span>
+<span class="s2">&quot;odometer&quot;</span> <span class="p">:</span> <span class="s2">&quot;miles&quot;</span><span class="p">}</span> 
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 533660 entries, 0 to 558810
+Data columns (total 12 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   year          533660 non-null  int64  
+ 1   brand         533660 non-null  object 
+ 2   model         533660 non-null  object 
+ 3   type          533660 non-null  object 
+ 4   state         533660 non-null  object 
+ 5   condition     533660 non-null  float64
+ 6   miles         533660 non-null  float64
+ 7   color         533660 non-null  object 
+ 8   interior      533660 non-null  object 
+ 9   seller        533660 non-null  object 
+ 10  sellingprice  533660 non-null  int64  
+ 11  saledate      533660 non-null  object 
+dtypes: float64(2), int64(2), object(8)
+memory usage: 52.9+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># transform into lowercase</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="categorial-or-numeric">
+<h1>Categorial or numeric?<a class="headerlink" href="#categorial-or-numeric" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>year = categorial</p></li>
+<li><p>brand = categorial</p></li>
+<li><p>model = categorial</p></li>
+<li><p>type = categorial</p></li>
+<li><p>state = categorial</p></li>
+<li><p>condition = categorial</p></li>
+<li><p>miles = numeric</p></li>
+<li><p>color = categorial</p></li>
+<li><p>interior = categorial</p></li>
+<li><p>seller = categorial</p></li>
+<li><p>ratingprice = numeric</p></li>
+<li><p>sellingprice = numeric</p></li>
+<li><p>saledate = categorial</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In kategorische Variablen umwandeln:</span>
+
+<span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;brand&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;interior&quot;</span><span class="p">,</span> <span class="s2">&quot;seller&quot;</span><span class="p">,</span> <span class="s2">&quot;saledate&quot;</span><span class="p">]:</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">cat</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cat</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 533660 entries, 0 to 558810
+Data columns (total 12 columns):
+ #   Column        Non-Null Count   Dtype   
+---  ------        --------------   -----   
+ 0   year          533660 non-null  category
+ 1   brand         533660 non-null  category
+ 2   model         533660 non-null  category
+ 3   type          533660 non-null  category
+ 4   state         533660 non-null  category
+ 5   condition     533660 non-null  category
+ 6   miles         533660 non-null  float64 
+ 7   color         533660 non-null  category
+ 8   interior      533660 non-null  category
+ 9   seller        533660 non-null  category
+ 10  sellingprice  533660 non-null  int64   
+ 11  saledate      533660 non-null  category
+dtypes: category(10), float64(1), int64(1)
+memory usage: 19.6 MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># summary statistics for all categorical columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>year</th>
+      <td>533660</td>
+      <td>26</td>
+      <td>2012</td>
+      <td>100612</td>
+    </tr>
+    <tr>
+      <th>brand</th>
+      <td>533660</td>
+      <td>53</td>
+      <td>ford</td>
+      <td>91908</td>
+    </tr>
+    <tr>
+      <th>model</th>
+      <td>533660</td>
+      <td>768</td>
+      <td>altima</td>
+      <td>19159</td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td>533660</td>
+      <td>45</td>
+      <td>sedan</td>
+      <td>236445</td>
+    </tr>
+    <tr>
+      <th>state</th>
+      <td>533660</td>
+      <td>38</td>
+      <td>fl</td>
+      <td>79626</td>
+    </tr>
+    <tr>
+      <th>condition</th>
+      <td>533660.0</td>
+      <td>41.0</td>
+      <td>1.9</td>
+      <td>40404.0</td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td>533660</td>
+      <td>20</td>
+      <td>black</td>
+      <td>106600</td>
+    </tr>
+    <tr>
+      <th>interior</th>
+      <td>533660</td>
+      <td>17</td>
+      <td>black</td>
+      <td>238668</td>
+    </tr>
+    <tr>
+      <th>seller</th>
+      <td>533660</td>
+      <td>12739</td>
+      <td>nissan-infiniti lt</td>
+      <td>19677</td>
+    </tr>
+    <tr>
+      <th>saledate</th>
+      <td>533660</td>
+      <td>3687</td>
+      <td>Tue Feb 10 2015 01:30:00 GMT-0800 (PST)</td>
+      <td>5231</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="data-splitting">
+<h2>Data splitting<a class="headerlink" href="#data-splitting" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_dataset</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">train_dataset</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="n">train_dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>brand</th>
+      <th>model</th>
+      <th>type</th>
+      <th>state</th>
+      <th>condition</th>
+      <th>miles</th>
+      <th>color</th>
+      <th>interior</th>
+      <th>seller</th>
+      <th>sellingprice</th>
+      <th>saledate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>530723</th>
+      <td>2000</td>
+      <td>volvo</td>
+      <td>s40</td>
+      <td>sedan</td>
+      <td>fl</td>
+      <td>2.0</td>
+      <td>90938.0</td>
+      <td>gray</td>
+      <td>gray</td>
+      <td>vietnam veterans of america</td>
+      <td>325</td>
+      <td>Thu Jun 11 2015 06:25:00 GMT-0700 (PDT)</td>
+    </tr>
+    <tr>
+      <th>309554</th>
+      <td>2012</td>
+      <td>honda</td>
+      <td>cr-v</td>
+      <td>suv</td>
+      <td>tn</td>
+      <td>3.8</td>
+      <td>35209.0</td>
+      <td>white</td>
+      <td>gray</td>
+      <td>wholesale inc # 2</td>
+      <td>19800</td>
+      <td>Wed Feb 18 2015 02:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>527934</th>
+      <td>2008</td>
+      <td>mercedes-benz</td>
+      <td>s-class</td>
+      <td>sedan</td>
+      <td>pa</td>
+      <td>4.0</td>
+      <td>70838.0</td>
+      <td>—</td>
+      <td>brown</td>
+      <td>r hollenshead auto sales inc</td>
+      <td>25250</td>
+      <td>Fri Jun 12 2015 02:00:00 GMT-0700 (PDT)</td>
+    </tr>
+    <tr>
+      <th>44135</th>
+      <td>2010</td>
+      <td>dodge</td>
+      <td>grand caravan</td>
+      <td>minivan</td>
+      <td>qc</td>
+      <td>4.4</td>
+      <td>94913.0</td>
+      <td>red</td>
+      <td>black</td>
+      <td>goldstar motors</td>
+      <td>7800</td>
+      <td>Tue Dec 23 2014 10:00:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>429520</th>
+      <td>2014</td>
+      <td>nissan</td>
+      <td>pathfinder</td>
+      <td>suv</td>
+      <td>mo</td>
+      <td>3.7</td>
+      <td>39827.0</td>
+      <td>silver</td>
+      <td>black</td>
+      <td>avis corporation</td>
+      <td>21300</td>
+      <td>Wed Jun 17 2015 03:30:00 GMT-0700 (PDT)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>118707</th>
+      <td>2014</td>
+      <td>ford</td>
+      <td>e-series wagon</td>
+      <td>van</td>
+      <td>tx</td>
+      <td>3.5</td>
+      <td>29584.0</td>
+      <td>—</td>
+      <td>gray</td>
+      <td>avis budget group</td>
+      <td>18300</td>
+      <td>Thu Jan 15 2015 02:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>105346</th>
+      <td>2011</td>
+      <td>nissan</td>
+      <td>maxima</td>
+      <td>sedan</td>
+      <td>ca</td>
+      <td>2.3</td>
+      <td>48630.0</td>
+      <td>black</td>
+      <td>gold</td>
+      <td>spreen honda</td>
+      <td>14600</td>
+      <td>Thu Jan 08 2015 12:00:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>451157</th>
+      <td>2013</td>
+      <td>infiniti</td>
+      <td>g sedan</td>
+      <td>g sedan</td>
+      <td>nj</td>
+      <td>3.6</td>
+      <td>22285.0</td>
+      <td>black</td>
+      <td>black</td>
+      <td>nissan infiniti lt</td>
+      <td>20400</td>
+      <td>Wed May 27 2015 02:30:00 GMT-0700 (PDT)</td>
+    </tr>
+    <tr>
+      <th>401984</th>
+      <td>2008</td>
+      <td>nissan</td>
+      <td>sentra</td>
+      <td>sedan</td>
+      <td>tn</td>
+      <td>1.9</td>
+      <td>111493.0</td>
+      <td>white</td>
+      <td>black</td>
+      <td>nissan motor acceptance corporation</td>
+      <td>3400</td>
+      <td>Tue Mar 10 2015 03:30:00 GMT-0700 (PDT)</td>
+    </tr>
+    <tr>
+      <th>98497</th>
+      <td>2011</td>
+      <td>bmw</td>
+      <td>3 series</td>
+      <td>coupe</td>
+      <td>ca</td>
+      <td>2.0</td>
+      <td>23815.0</td>
+      <td>gray</td>
+      <td>black</td>
+      <td>financial services remarketing (lease)</td>
+      <td>17500</td>
+      <td>Tue Feb 03 2015 04:30:00 GMT-0800 (PST)</td>
+    </tr>
+  </tbody>
+</table>
+<p>426928 rows × 12 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="exploratory-data-analysis">
+<h2>Exploratory data analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># summary statistics for all numerical columns</span>
+<span class="c1">#round(train_dataset.describe(),2).transpose()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_2_SK-learn_27_0.png" src="_images/model_2_SK-learn_27_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="correlation-analysis">
+<h2>Correlation analysis<a class="headerlink" href="#correlation-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create correlation matrix for numerical variables</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">corr_matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>miles</th>
+      <th>sellingprice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>miles</th>
+      <td>1.000000</td>
+      <td>-0.576428</td>
+    </tr>
+    <tr>
+      <th>sellingprice</th>
+      <td>-0.576428</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple heatmap</span>
+<span class="n">heatmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_2_SK-learn_30_0.png" src="_images/model_2_SK-learn_30_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a pretty heatmap</span>
+
+<span class="c1"># Use a mask to plot only part of a matrix</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">)</span>
+<span class="n">mask</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">triu_indices_from</span><span class="p">(</span><span class="n">mask</span><span class="p">)]</span><span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Change size</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+
+<span class="c1"># Build heatmap with additional options</span>
+<span class="n">heatmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">,</span> 
+                      <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">,</span> 
+                      <span class="n">square</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+                      <span class="n">linewidths</span> <span class="o">=</span> <span class="mf">.5</span><span class="p">,</span>
+                      <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span>
+                      <span class="n">cbar_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;shrink&#39;</span><span class="p">:</span> <span class="mf">.6</span><span class="p">,</span>
+                                <span class="s1">&#39;ticks&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span>
+                      <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+                      <span class="n">vmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="n">annot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                      <span class="n">annot_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_2_SK-learn_31_0.png" src="_images/model_2_SK-learn_31_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="data-preprocessing-pipeline">
+<h2>Data preprocessing pipeline<a class="headerlink" href="#data-preprocessing-pipeline" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modules</span>
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">make_column_selector</span> <span class="k">as</span> <span class="n">selector</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">set_config</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">OneHotEncoder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for numeric features</span>
+<span class="n">numeric_transformer</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">())</span>
+    <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for categorical features  </span>
+<span class="n">categorical_transformer</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="s1">&#39;missing&#39;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;onehot&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))</span>
+    <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pipeline</span>
+<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span><span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="n">numeric_transformer</span><span class="p">,</span> <span class="n">selector</span><span class="p">(</span><span class="n">dtype_exclude</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">categorical_transformer</span><span class="p">,</span> <span class="n">selector</span><span class="p">(</span><span class="n">dtype_include</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">))</span>
+        <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>brand</th>
+      <th>model</th>
+      <th>type</th>
+      <th>state</th>
+      <th>condition</th>
+      <th>miles</th>
+      <th>color</th>
+      <th>interior</th>
+      <th>seller</th>
+      <th>sellingprice</th>
+      <th>saledate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>kia</td>
+      <td>sorento</td>
+      <td>suv</td>
+      <td>ca</td>
+      <td>5.0</td>
+      <td>16639.0</td>
+      <td>white</td>
+      <td>black</td>
+      <td>kia motors america, inc</td>
+      <td>21500</td>
+      <td>Tue Dec 16 2014 12:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015</td>
+      <td>kia</td>
+      <td>sorento</td>
+      <td>suv</td>
+      <td>ca</td>
+      <td>5.0</td>
+      <td>9393.0</td>
+      <td>white</td>
+      <td>beige</td>
+      <td>kia motors america, inc</td>
+      <td>21500</td>
+      <td>Tue Dec 16 2014 12:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>bmw</td>
+      <td>3 series</td>
+      <td>sedan</td>
+      <td>ca</td>
+      <td>4.5</td>
+      <td>1331.0</td>
+      <td>gray</td>
+      <td>black</td>
+      <td>financial services remarketing (lease)</td>
+      <td>30000</td>
+      <td>Thu Jan 15 2015 04:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>volvo</td>
+      <td>s60</td>
+      <td>sedan</td>
+      <td>ca</td>
+      <td>4.1</td>
+      <td>14282.0</td>
+      <td>white</td>
+      <td>black</td>
+      <td>volvo na rep/world omni</td>
+      <td>27750</td>
+      <td>Thu Jan 29 2015 04:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014</td>
+      <td>bmw</td>
+      <td>6 series gran coupe</td>
+      <td>sedan</td>
+      <td>ca</td>
+      <td>4.3</td>
+      <td>2641.0</td>
+      <td>gray</td>
+      <td>black</td>
+      <td>financial services remarketing (lease)</td>
+      <td>67000</td>
+      <td>Thu Dec 18 2014 12:30:00 GMT-0800 (PST)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="simple-regression">
+<h2>Simple regression<a class="headerlink" href="#simple-regression" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select features for simple regression</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;miles&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+
+<span class="c1"># Create response</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;sellingprice&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check feature</span>
+<span class="n">X</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 533660 entries, 0 to 558810
+Data columns (total 1 columns):
+ #   Column  Non-Null Count   Dtype  
+---  ------  --------------   -----  
+ 0   miles   533660 non-null  float64
+dtypes: float64(1)
+memory usage: 24.3 MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check label</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         21500
+1         21500
+2         30000
+3         27750
+4         67000
+          ...  
+558806    33000
+558807    30800
+558808    34000
+558809    11100
+558810    26700
+Name: sellingprice, Length: 533660, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check for missing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing values X:&quot;</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing values Y:&quot;</span><span class="p">,</span><span class="n">y</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Missing values X: 0
+Missing values Y: 0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Data splitting<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Train Test Split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="modeling">
+<h2>Modeling<a class="headerlink" href="#modeling" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># Create pipeline with model</span>
+<span class="n">lm_pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;lm&#39;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())</span>
+                        <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show pipeline</span>
+<span class="n">set_config</span><span class="p">(</span><span class="n">display</span><span class="o">=</span><span class="s2">&quot;diagram&quot;</span><span class="p">)</span>
+<span class="c1"># Fit model</span>
+<span class="n">lm_pipe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 {color: black;background-color: white;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 pre{padding: 0;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-toggleable {background-color: white;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-estimator:hover {background-color: #d4ebff;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-item {z-index: 1;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-parallel-item:only-child::after {width: 0;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88 div.sk-text-repr-fallback {display: none;}</style><div id="sk-8cff2116-bdc6-41a0-be00-b0b7733cdb88" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
+                 ColumnTransformer(transformers=[(&#x27;num&#x27;,
+                                                  Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                                   SimpleImputer(strategy=&#x27;median&#x27;)),
+                                                                  (&#x27;scaler&#x27;,
+                                                                   StandardScaler())]),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f8002c6b8d0&gt;),
+                                                 (&#x27;cat&#x27;,
+                                                  Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                                   SimpleImputer(fill_value=&#x27;missing&#x27;,
+                                                                                 strategy=&#x27;constant&#x27;)),
+                                                                  (&#x27;onehot&#x27;,
+                                                                   OneHotEncoder(handle_unknown=&#x27;ignore&#x27;))]),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f8002c6b690&gt;)])),
+                (&#x27;lm&#x27;, LinearRegression())])</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="8855e140-6b13-4a3b-8bb8-40d61b37f611" type="checkbox" ><label for="8855e140-6b13-4a3b-8bb8-40d61b37f611" class="sk-toggleable__label sk-toggleable__label-arrow">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
+                 ColumnTransformer(transformers=[(&#x27;num&#x27;,
+                                                  Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                                   SimpleImputer(strategy=&#x27;median&#x27;)),
+                                                                  (&#x27;scaler&#x27;,
+                                                                   StandardScaler())]),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f8002c6b8d0&gt;),
+                                                 (&#x27;cat&#x27;,
+                                                  Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                                   SimpleImputer(fill_value=&#x27;missing&#x27;,
+                                                                                 strategy=&#x27;constant&#x27;)),
+                                                                  (&#x27;onehot&#x27;,
+                                                                   OneHotEncoder(handle_unknown=&#x27;ignore&#x27;))]),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f8002c6b690&gt;)])),
+                (&#x27;lm&#x27;, LinearRegression())])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="5c4647d6-a74d-4e7c-b87f-d3e3c2f7cc24" type="checkbox" ><label for="5c4647d6-a74d-4e7c-b87f-d3e3c2f7cc24" class="sk-toggleable__label sk-toggleable__label-arrow">preprocessor: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[(&#x27;num&#x27;,
+                                 Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                  SimpleImputer(strategy=&#x27;median&#x27;)),
+                                                 (&#x27;scaler&#x27;, StandardScaler())]),
+                                 &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f8002c6b8d0&gt;),
+                                (&#x27;cat&#x27;,
+                                 Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                  SimpleImputer(fill_value=&#x27;missing&#x27;,
+                                                                strategy=&#x27;constant&#x27;)),
+                                                 (&#x27;onehot&#x27;,
+                                                  OneHotEncoder(handle_unknown=&#x27;ignore&#x27;))]),
+                                 &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f8002c6b690&gt;)])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="52aac6c2-182c-417b-a3c9-6c5a7e4cff4b" type="checkbox" ><label for="52aac6c2-182c-417b-a3c9-6c5a7e4cff4b" class="sk-toggleable__label sk-toggleable__label-arrow">num</label><div class="sk-toggleable__content"><pre>&lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f8002c6b8d0&gt;</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="8ce889cd-81d1-4a7e-82eb-2d723d4d1f11" type="checkbox" ><label for="8ce889cd-81d1-4a7e-82eb-2d723d4d1f11" class="sk-toggleable__label sk-toggleable__label-arrow">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy=&#x27;median&#x27;)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="0a3a2248-b0a8-49fd-b4d1-0d37b9a7a4c3" type="checkbox" ><label for="0a3a2248-b0a8-49fd-b4d1-0d37b9a7a4c3" class="sk-toggleable__label sk-toggleable__label-arrow">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="21ad83bb-c1e5-4458-be60-d84826fbac68" type="checkbox" ><label for="21ad83bb-c1e5-4458-be60-d84826fbac68" class="sk-toggleable__label sk-toggleable__label-arrow">cat</label><div class="sk-toggleable__content"><pre>&lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f8002c6b690&gt;</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="43bf35a8-be9b-4ac7-9a7c-0f12ac2644b6" type="checkbox" ><label for="43bf35a8-be9b-4ac7-9a7c-0f12ac2644b6" class="sk-toggleable__label sk-toggleable__label-arrow">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value=&#x27;missing&#x27;, strategy=&#x27;constant&#x27;)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e5147f0f-cff1-49bc-aa1e-25b278810632" type="checkbox" ><label for="e5147f0f-cff1-49bc-aa1e-25b278810632" class="sk-toggleable__label sk-toggleable__label-arrow">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="b45b0206-596f-402a-9ddc-76a94d762503" type="checkbox" ><label for="b45b0206-596f-402a-9ddc-76a94d762503" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtain model coefficients</span>
+<span class="n">lm_pipe</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;lm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-5576.06320538])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluation-with-training-data">
+<h2>Evaluation with training data<a class="headerlink" href="#evaluation-with-training-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>miles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>56243</th>
+      <td>11527.0</td>
+    </tr>
+    <tr>
+      <th>374437</th>
+      <td>25436.0</td>
+    </tr>
+    <tr>
+      <th>90062</th>
+      <td>101963.0</td>
+    </tr>
+    <tr>
+      <th>142456</th>
+      <td>47619.0</td>
+    </tr>
+    <tr>
+      <th>171477</th>
+      <td>176019.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">lm_pipe</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+
+<span class="n">r2_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.33186380016753614
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+
+<span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62598005.57227228
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RMSE</span>
+<span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7911.8901390421415
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+
+<span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5490.50243705971
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot with Seaborn</span>
+
+<span class="c1"># We first need to create a DataFrame</span>
+<span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;miles&#39;</span><span class="p">],</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="n">y_train</span><span class="p">})</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_train</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;darkred&#39;</span><span class="p">},</span> <span class="n">ci</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_2_SK-learn_56_0.png" src="_images/model_2_SK-learn_56_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">py</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="c1"># Plot with Plotly Express</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;miles&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.65</span><span class="p">,</span> 
+                <span class="n">trendline</span><span class="o">=</span><span class="s1">&#39;ols&#39;</span><span class="p">,</span> <span class="n">trendline_color_override</span><span class="o">=</span><span class="s1">&#39;darkred&#39;</span><span class="p">);</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">r</span><span class="o">/</span><span class="n">ym9jxwt15b70q43zrdvqgmdh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23552</span><span class="o">/</span><span class="mf">548667493.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">py</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Plot with Plotly Express</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;plotly&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">residplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_2_SK-learn_58_0.png" src="_images/model_2_SK-learn_58_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># wrongest predictions</span>
+
+<span class="c1"># create dataframe</span>
+<span class="n">df_error</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">y_train</span><span class="p">,</span>
+      <span class="s2">&quot;y_pred&quot;</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">,</span>
+      <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="n">y_pred</span> <span class="o">-</span> <span class="n">y_train</span>
+    <span class="p">})</span>
+
+<span class="c1"># sort by error, select top 10 and get index</span>
+<span class="n">error_index</span> <span class="o">=</span> <span class="n">df_error</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+
+<span class="c1"># show corresponding data observations</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">error_index</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>brand</th>
+      <th>model</th>
+      <th>type</th>
+      <th>state</th>
+      <th>condition</th>
+      <th>miles</th>
+      <th>color</th>
+      <th>interior</th>
+      <th>seller</th>
+      <th>sellingprice</th>
+      <th>saledate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>61616</th>
+      <td>2013</td>
+      <td>honda</td>
+      <td>accord</td>
+      <td>sedan</td>
+      <td>ga</td>
+      <td>4.1</td>
+      <td>13794.0</td>
+      <td>black</td>
+      <td>black</td>
+      <td>ahfc/honda lease trust/hvt, inc.</td>
+      <td>18500</td>
+      <td>Tue Dec 30 2014 13:00:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>531016</th>
+      <td>2014</td>
+      <td>chevrolet</td>
+      <td>traverse</td>
+      <td>suv</td>
+      <td>il</td>
+      <td>3.0</td>
+      <td>15881.0</td>
+      <td>gray</td>
+      <td>gray</td>
+      <td>gm remarketing</td>
+      <td>21500</td>
+      <td>Tue Jun 16 2015 03:00:00 GMT-0700 (PDT)</td>
+    </tr>
+    <tr>
+      <th>41444</th>
+      <td>2014</td>
+      <td>toyota</td>
+      <td>camry</td>
+      <td>sedan</td>
+      <td>co</td>
+      <td>4.3</td>
+      <td>12419.0</td>
+      <td>silver</td>
+      <td>black</td>
+      <td>toyota motor sales usa inc/program</td>
+      <td>16800</td>
+      <td>Tue Dec 23 2014 11:45:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>543646</th>
+      <td>2013</td>
+      <td>audi</td>
+      <td>s6</td>
+      <td>sedan</td>
+      <td>nv</td>
+      <td>4.3</td>
+      <td>29013.0</td>
+      <td>white</td>
+      <td>black</td>
+      <td>findlay chevrolet</td>
+      <td>51500</td>
+      <td>Fri Jun 12 2015 05:00:00 GMT-0700 (PDT)</td>
+    </tr>
+    <tr>
+      <th>95291</th>
+      <td>1996</td>
+      <td>jeep</td>
+      <td>grand cherokee</td>
+      <td>suv</td>
+      <td>ca</td>
+      <td>2.0</td>
+      <td>126799.0</td>
+      <td>red</td>
+      <td>gray</td>
+      <td>crest motors</td>
+      <td>1500</td>
+      <td>Tue Jan 06 2015 12:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>332547</th>
+      <td>2012</td>
+      <td>ford</td>
+      <td>f-250 super duty</td>
+      <td>crew cab</td>
+      <td>tx</td>
+      <td>4.9</td>
+      <td>23339.0</td>
+      <td>black</td>
+      <td>black</td>
+      <td>texas rv outlet superstore</td>
+      <td>44800</td>
+      <td>Wed Feb 18 2015 02:20:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>263467</th>
+      <td>2012</td>
+      <td>acura</td>
+      <td>tl</td>
+      <td>sedan</td>
+      <td>nj</td>
+      <td>4.3</td>
+      <td>16538.0</td>
+      <td>gray</td>
+      <td>gray</td>
+      <td>ahfc/honda lease trust/hvt, inc. eot</td>
+      <td>22900</td>
+      <td>Wed Feb 11 2015 01:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>40518</th>
+      <td>2004</td>
+      <td>ford</td>
+      <td>explorer</td>
+      <td>suv</td>
+      <td>fl</td>
+      <td>1.9</td>
+      <td>162284.0</td>
+      <td>green</td>
+      <td>beige</td>
+      <td>east coast financial</td>
+      <td>1100</td>
+      <td>Tue Jan 06 2015 01:15:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>390097</th>
+      <td>2012</td>
+      <td>toyota</td>
+      <td>highlander</td>
+      <td>suv</td>
+      <td>wi</td>
+      <td>2.0</td>
+      <td>49557.0</td>
+      <td>black</td>
+      <td>gray</td>
+      <td>toyota financial services</td>
+      <td>20500</td>
+      <td>Wed Mar 04 2015 02:00:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>33169</th>
+      <td>2013</td>
+      <td>hyundai</td>
+      <td>elantra</td>
+      <td>sedan</td>
+      <td>az</td>
+      <td>3.9</td>
+      <td>37232.0</td>
+      <td>brown</td>
+      <td>tan</td>
+      <td>enterprise veh exchange/rental</td>
+      <td>11500</td>
+      <td>Thu Dec 18 2014 11:30:00 GMT-0800 (PST)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="evaluation-with-test-data">
+<h2>Evaluation with test data<a class="headerlink" href="#evaluation-with-test-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">lm_pipe</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MSE:&#39;</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RMSE:&#39;</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE: 61969186.55675754
+RMSE: 7872.050975238762
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with Plotly Express</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;miles&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.65</span><span class="p">,</span> 
+                <span class="n">trendline</span><span class="o">=</span><span class="s1">&#39;ols&#39;</span><span class="p">,</span> <span class="n">trendline_color_override</span><span class="o">=</span><span class="s1">&#39;darkred&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multiple-regression">
+<h1>Multiple Regression<a class="headerlink" href="#multiple-regression" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select features for multiple regression</span>
+<span class="n">features</span><span class="o">=</span> <span class="p">[</span>
+ <span class="s1">&#39;miles&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;brand&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;model&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;type&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;condition&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;color&#39;</span>
+  <span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+
+<span class="n">X</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing values:&quot;</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="c1"># Create response</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;sellingprice&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 533660 entries, 0 to 558810
+Data columns (total 6 columns):
+ #   Column     Non-Null Count   Dtype   
+---  ------     --------------   -----   
+ 0   miles      533660 non-null  float64 
+ 1   brand      533660 non-null  category
+ 2   model      533660 non-null  category
+ 3   type       533660 non-null  category
+ 4   condition  533660 non-null  category
+ 5   color      533660 non-null  category
+dtypes: category(5), float64(1)
+memory usage: 27.3 MB
+Missing values: 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data splitting</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create pipeline with model</span>
+<span class="n">lm_pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;lm&#39;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())</span>
+                        <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show pipeline</span>
+<span class="n">set_config</span><span class="p">(</span><span class="n">display</span><span class="o">=</span><span class="s2">&quot;diagram&quot;</span><span class="p">)</span>
+<span class="c1"># Fit model</span>
+<span class="n">lm_pipe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 {color: black;background-color: white;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 pre{padding: 0;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-toggleable {background-color: white;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-estimator:hover {background-color: #d4ebff;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-item {z-index: 1;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-parallel-item:only-child::after {width: 0;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-758b2081-1b2c-43cf-9588-c60f9fe6f752 div.sk-text-repr-fallback {display: none;}</style><div id="sk-758b2081-1b2c-43cf-9588-c60f9fe6f752" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
+                 ColumnTransformer(transformers=[(&#x27;num&#x27;,
+                                                  Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                                   SimpleImputer(strategy=&#x27;median&#x27;)),
+                                                                  (&#x27;scaler&#x27;,
+                                                                   StandardScaler())]),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f7ed4ff2e20&gt;),
+                                                 (&#x27;cat&#x27;,
+                                                  Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                                   SimpleImputer(fill_value=&#x27;missing&#x27;,
+                                                                                 strategy=&#x27;constant&#x27;)),
+                                                                  (&#x27;onehot&#x27;,
+                                                                   OneHotEncoder(handle_unknown=&#x27;ignore&#x27;))]),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f7ed4ff2cd0&gt;)])),
+                (&#x27;lm&#x27;, LinearRegression())])</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="bc70b56a-c690-4105-9b8a-bb52957aeb8e" type="checkbox" ><label for="bc70b56a-c690-4105-9b8a-bb52957aeb8e" class="sk-toggleable__label sk-toggleable__label-arrow">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
+                 ColumnTransformer(transformers=[(&#x27;num&#x27;,
+                                                  Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                                   SimpleImputer(strategy=&#x27;median&#x27;)),
+                                                                  (&#x27;scaler&#x27;,
+                                                                   StandardScaler())]),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f7ed4ff2e20&gt;),
+                                                 (&#x27;cat&#x27;,
+                                                  Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                                   SimpleImputer(fill_value=&#x27;missing&#x27;,
+                                                                                 strategy=&#x27;constant&#x27;)),
+                                                                  (&#x27;onehot&#x27;,
+                                                                   OneHotEncoder(handle_unknown=&#x27;ignore&#x27;))]),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f7ed4ff2cd0&gt;)])),
+                (&#x27;lm&#x27;, LinearRegression())])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c19e113a-4f2a-4d1e-b091-d24da77dd493" type="checkbox" ><label for="c19e113a-4f2a-4d1e-b091-d24da77dd493" class="sk-toggleable__label sk-toggleable__label-arrow">preprocessor: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[(&#x27;num&#x27;,
+                                 Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                  SimpleImputer(strategy=&#x27;median&#x27;)),
+                                                 (&#x27;scaler&#x27;, StandardScaler())]),
+                                 &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f7ed4ff2e20&gt;),
+                                (&#x27;cat&#x27;,
+                                 Pipeline(steps=[(&#x27;imputer&#x27;,
+                                                  SimpleImputer(fill_value=&#x27;missing&#x27;,
+                                                                strategy=&#x27;constant&#x27;)),
+                                                 (&#x27;onehot&#x27;,
+                                                  OneHotEncoder(handle_unknown=&#x27;ignore&#x27;))]),
+                                 &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f7ed4ff2cd0&gt;)])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="f3e0af86-b7a6-4532-baac-b754b0da288f" type="checkbox" ><label for="f3e0af86-b7a6-4532-baac-b754b0da288f" class="sk-toggleable__label sk-toggleable__label-arrow">num</label><div class="sk-toggleable__content"><pre>&lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f7ed4ff2e20&gt;</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="b2bf4403-9551-454b-b564-587dda988199" type="checkbox" ><label for="b2bf4403-9551-454b-b564-587dda988199" class="sk-toggleable__label sk-toggleable__label-arrow">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy=&#x27;median&#x27;)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="472ce51e-4c96-4f6b-8272-ce86c4593219" type="checkbox" ><label for="472ce51e-4c96-4f6b-8272-ce86c4593219" class="sk-toggleable__label sk-toggleable__label-arrow">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="d7d84496-a0b0-40fb-b482-981a5660a1dc" type="checkbox" ><label for="d7d84496-a0b0-40fb-b482-981a5660a1dc" class="sk-toggleable__label sk-toggleable__label-arrow">cat</label><div class="sk-toggleable__content"><pre>&lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f7ed4ff2cd0&gt;</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="16fe1ef0-3a59-408a-aae4-3526fcb297eb" type="checkbox" ><label for="16fe1ef0-3a59-408a-aae4-3526fcb297eb" class="sk-toggleable__label sk-toggleable__label-arrow">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value=&#x27;missing&#x27;, strategy=&#x27;constant&#x27;)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="3ce9de56-59d3-4c88-a536-6baab7830850" type="checkbox" ><label for="3ce9de56-59d3-4c88-a536-6baab7830850" class="sk-toggleable__label sk-toggleable__label-arrow">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="6d897739-ca57-4ac0-b842-1cdef6cd0387" type="checkbox" ><label for="6d897739-ca57-4ac0-b842-1cdef6cd0387" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtain model coefficients</span>
+<span class="n">lm_pipe</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;lm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-4.56717310e+03, -6.39295886e+03,  2.94670276e+04,  8.48026322e+03,
+        5.89729378e+04, -1.15435924e+02, -1.26416008e+04, -5.92110550e+03,
+       -7.42202280e+03, -3.21452622e+03, -7.36578267e+03,  7.71738420e+04,
+       -1.21920093e+04,  9.35583502e+03, -1.03720055e+04, -4.05227398e+03,
+       -1.54867148e+04, -9.89667083e+03, -9.95508601e+02, -1.17448291e+04,
+        8.09648783e+03, -1.32342721e+04,  2.38158436e+03, -6.28096627e+03,
+       -1.11571256e+04,  4.11928687e+04, -3.74985162e+03, -2.11085164e+03,
+       -9.49655492e+03,  7.02780575e+03,  1.05294538e+04, -7.04093998e+03,
+       -1.27141288e+02, -1.25046006e+04, -1.00391980e+04, -1.28647304e+04,
+       -1.43069591e+04, -1.14900734e+04, -6.49756230e+03, -1.24944225e+04,
+        1.24827952e+04, -7.18232380e+03,  6.31018526e+04, -1.15202002e+04,
+       -1.34154688e+04, -1.15472009e+04, -1.06978044e+04, -8.40933469e+03,
+       -1.40031426e+04,  1.87481977e+04, -8.13932114e+03, -1.10098947e+04,
+       -9.87756582e+03, -7.33317317e+03, -1.20260771e+03, -9.51260890e+03,
+        7.73471311e+03, -1.15585369e+04,  2.48992520e+03,  6.51461307e+03,
+       -5.54552885e+03, -6.33703735e+03,  7.88914446e+03, -6.21796702e+03,
+       -1.32554357e+04,  4.28805611e+03, -9.15934899e+03,  4.72419880e+03,
+        9.72104529e+03,  2.20576952e+03, -2.49613650e+04,  7.77618812e+03,
+        1.06952360e+04,  1.17434496e+04, -9.79704058e+03,  7.43312604e+04,
+        2.77825837e+03, -1.70199477e+03,  7.67921176e+03, -5.82100467e+03,
+       -1.59826575e+04, -2.69554490e+03, -3.67545973e+03, -6.99610431e+03,
+        8.39588831e+03,  2.61385595e+04, -3.74521084e+03, -2.58879130e+03,
+       -3.12577588e+03, -1.44159199e+03, -3.48578073e+03, -1.96572526e+03,
+       -4.62710224e+03,  2.68028598e+04,  3.16888052e+02,  2.51437995e+03,
+       -1.68969133e+04, -1.76000395e+04, -1.03306061e+04, -1.25189885e+04,
+        6.80199377e+03, -4.10541758e+03,  7.98128451e+03, -4.60564773e+03,
+       -8.70231573e+02,  7.04954463e+02,  5.80721167e+03,  2.05143924e+03,
+       -9.89336005e+01,  1.46517923e+04,  9.03838093e+02,  6.81843855e+02,
+       -1.46097948e+03, -5.39233239e+03, -2.19447337e+04,  1.27855206e+03,
+        2.67726321e+03, -2.07871871e+03, -1.43486498e+03,  7.47643355e+03,
+       -2.38560318e+03, -8.65420300e+03, -4.29813109e+03, -2.83730300e+03,
+       -3.09867337e+03, -2.14276850e+02,  7.89423150e+01, -5.74513792e+02,
+       -2.86024564e+03, -2.51251419e+03, -4.92111015e+03,  6.41724933e+01,
+        5.72522813e+03, -7.31540099e+03, -8.56812698e+03, -5.16814475e+03,
+       -2.02526477e+03,  1.25136503e+03, -1.61667087e+03, -5.94581600e+03,
+       -6.82517591e+03, -6.13354065e+03, -6.58116497e+03, -4.35367030e+03,
+       -8.06624176e+03, -3.46372505e+03, -9.93445646e+02,  6.13607517e+03,
+       -7.23563889e+03, -6.41957464e+03, -7.01823924e+01, -2.67670740e+03,
+       -1.48156338e+04, -2.47803437e+03, -1.54713988e+04, -1.50746753e+03,
+       -6.61125669e+03, -2.29171919e+03, -2.24145909e+03, -1.11217064e+03,
+       -8.60178539e+02, -1.19489394e+04, -3.67339504e+03, -4.21568158e+03,
+       -1.71712539e+03, -1.31372909e+03, -4.61054775e+03,  2.87910324e+03,
+       -6.70377853e+03,  2.34734740e+04,  4.51146334e+02, -3.16833300e+03,
+       -1.12164410e+03, -3.75201626e+03,  1.07466990e+01, -7.47749545e+03,
+       -7.23706859e+03, -4.21485917e+03, -1.01766619e+04, -6.07610512e+03,
+       -9.16890326e+03, -6.20200606e+03, -1.37593883e+04,  1.54323369e+02,
+       -2.43116444e+03, -2.62180259e+03,  9.71862770e+02, -2.38434732e+03,
+       -4.38891949e+03, -1.06047145e+04, -2.81355610e+03,  3.71639401e+02,
+       -4.95390881e+03,  3.14916225e+03,  1.28468332e+03, -5.86526311e+03,
+       -1.22195312e+04,  6.35995371e+03, -7.18477351e+03, -6.56885863e+03,
+       -6.38328671e+03, -9.19731020e+03, -1.03577238e+04, -4.67805791e+03,
+       -2.65024063e+04,  1.73508588e+04, -1.54568854e+04, -1.53468226e+04,
+        1.11148857e+03,  2.29677874e+04,  1.39915447e+04, -3.86678181e+03,
+       -3.89515380e+03, -2.59916550e+03,  1.25663378e+03, -2.85099817e+03,
+       -8.91535570e+02, -1.05897870e+03, -4.93938509e+03, -1.78242419e+03,
+        8.59576274e+03,  3.07722957e+04, -1.78788041e+03, -2.17243944e+04,
+       -1.27665751e+03, -5.29156281e+03, -1.19229739e+04,  1.74094109e+03,
+       -3.36817580e+03, -7.03299294e+03, -5.39353376e+03, -4.14025046e+03,
+        3.36751825e+02, -1.54507843e+03,  8.58384581e+03,  7.67547132e+03,
+        1.50582864e+04, -4.12392611e+02, -7.80073271e+02, -1.83848574e+03,
+       -1.29005706e+03, -4.62051251e+03, -4.47489882e+03, -7.63321023e+03,
+       -2.43727477e+03, -6.61038690e+03, -8.01109021e+03, -5.46747448e+03,
+       -8.89302984e+03,  1.79679712e+03, -1.40295350e+04, -1.14252831e+04,
+       -6.23539092e+03, -1.34532254e+03, -3.21462503e+03, -9.21091753e+03,
+       -5.07298051e+03, -2.06399285e+03,  2.63461441e+02, -5.63268413e+02,
+       -3.72112119e+03, -8.89311556e+02, -1.41350044e+03, -1.31044268e+03,
+       -1.19771118e+03,  6.82641297e+02, -1.90912654e+03, -2.06129579e+02,
+       -3.12256276e+03, -2.55883716e+03, -3.38420105e+03, -3.21728741e+03,
+       -1.19277423e+04, -2.07350277e+03,  1.47373280e+04,  6.09185832e+03,
+       -4.95093950e+01, -1.58056553e+03,  5.41580523e+02,  1.62349098e+03,
+        2.00342131e+03,  8.83935326e+02, -1.48553691e+03, -5.69235377e+03,
+       -5.68729785e+03,  1.62504404e+04, -7.33818110e+03,  3.65481872e+03,
+       -7.43090811e+03, -2.76874805e+03,  5.38964906e+03,  7.54009189e+03,
+       -2.65712874e+03,  8.03624625e+03, -2.97584528e+03, -2.19536019e+03,
+       -3.63176917e+03,  3.90763575e+03,  4.41842176e+03, -1.45468282e+04,
+       -1.89188403e+04,  2.02313626e+03,  7.02780575e+03,  3.81390529e+03,
+        2.26677119e+03,  3.25502978e+03, -3.85975227e+03, -6.49624656e+03,
+       -1.92676617e+03, -3.14178275e+03,  1.95642748e+03,  5.92373543e+01,
+       -5.68742028e+02,  3.10340743e+03,  5.82554687e+03,  6.45898513e+03,
+        8.50509344e+03,  3.93535372e+04,  4.33047265e+03, -7.07785042e+03,
+       -2.16368623e+02, -4.13144263e+03, -2.66268056e+03,  2.95401902e+03,
+       -1.93066953e+04,  4.96127280e+03,  6.08573727e+04, -5.28029124e+03,
+        3.72231601e+02, -1.71291607e+03, -2.21935596e+03, -4.88977256e+03,
+       -1.06978044e+04,  1.28571104e+03, -1.53386779e+04, -1.94915295e+03,
+       -2.50524634e+03, -5.21080158e+02, -2.51351791e+03,  1.95407112e+03,
+        2.49773882e+02, -9.41600795e+03, -1.75269425e+04, -1.73129577e+04,
+       -9.50252075e+03, -5.27627020e+03, -7.34331977e+03, -8.48444623e+03,
+        5.60963835e+04, -1.94722698e+04, -4.32292534e+03, -1.82038874e+04,
+       -1.64987969e+04, -7.22300856e+03, -9.04925163e+03, -3.22600862e+03,
+       -8.91017852e+02,  4.22507280e+03, -1.43382294e+02,  4.11928687e+04,
+        3.97078100e+03, -1.82848027e+02,  1.71856874e+04,  6.31018526e+04,
+        4.12465095e+03, -3.45005706e+03, -5.79744430e+02, -3.49992242e+03,
+       -2.38660804e+03,  2.25343806e+03,  8.87977283e+03, -3.19923955e+02,
+       -2.56383017e+03, -1.63286719e+03,  3.34729548e+04, -1.31375709e+03,
+        1.96015877e+02, -2.62082922e+03,  1.96545498e+04,  1.72729394e+04,
+       -5.22318031e+03,  4.48343815e+03, -8.84189442e+03, -5.86303509e+03,
+        5.72984156e+01, -1.43839793e+03,  5.79290977e+04, -6.97997067e+02,
+        1.15513240e+03,  1.05479316e+04, -1.32700143e+03,  2.44601092e+04,
+       -2.52299702e+03, -4.78056816e+03, -9.76942804e+03, -8.38262461e+03,
+       -6.44712526e+03,  9.98652941e+02,  4.01647130e+02, -5.92095469e+03,
+       -9.39534433e+03, -1.50933897e+03, -1.86549140e+04, -1.96639455e+04,
+        1.19888356e+05, -2.22255229e+03, -5.15215674e+03, -6.59577090e+03,
+       -1.35212168e+03,  6.19416361e+03, -4.33731251e+03, -1.33041254e+03,
+       -5.33776655e+03, -1.71596977e+03, -1.20784560e+03, -8.07511412e+03,
+       -3.16041992e+03,  8.53739637e+02, -6.15066463e+03, -1.09819435e+03,
+        3.60940662e+03,  9.66401523e+03, -1.70511758e+04, -2.86576958e+03,
+        1.02089680e+03, -1.24296142e+03,  1.20880387e+02,  8.03077499e+02,
+       -7.08561276e+03,  1.82315709e+03, -6.90616146e+03,  1.96976797e+04,
+        9.35583502e+03, -8.73127745e+02, -1.65017504e+02, -8.00636685e+02,
+        2.22980788e+03, -2.13787099e+03,  1.15953744e+04, -6.80194723e+02,
+        1.19277067e+04, -4.04745713e+03, -2.36850524e+03, -1.96287098e+03,
+       -1.03814058e+03, -1.05847365e+04, -8.25510970e+03, -7.74091006e+03,
+       -6.06605757e+03,  1.30158324e+04, -3.83675822e+03, -6.25229154e+03,
+       -4.50256213e+03,  8.25536409e+03,  6.44849210e+03, -2.15426342e+02,
+       -4.79618479e+03, -4.62177504e+03, -2.31101036e+03,  2.72414161e+04,
+       -9.58108142e+03, -4.24582248e+03,  5.18916588e+03, -1.61134593e+04,
+       -1.09232936e+04,  3.74387881e+04, -1.67935079e+04,  1.67020352e+04,
+       -8.35218913e+03,  2.52616001e+04,  5.99946128e+04,  1.31373221e+04,
+       -4.18342382e+03, -5.65000145e+03, -5.07149325e+03, -7.40329844e+03,
+       -5.58275748e+03, -1.06249288e+03, -2.43966965e+03, -2.45646727e+03,
+       -3.82944811e+03, -5.56272554e+03, -3.36786809e+03,  4.67413989e+03,
+       -9.72816010e+03, -6.91489160e+03, -4.57286635e+03, -5.47434084e+03,
+       -3.29443115e+03, -2.84351124e+03, -5.96455867e+03, -7.60653882e+03,
+       -6.19523219e+03, -3.38236927e+03,  8.02939167e+02, -4.63799525e+03,
+       -1.09226727e+03, -8.53403689e+00, -5.84801704e+03, -6.13899837e+03,
+        8.22217855e+03,  4.09354556e+03,  7.48266071e+03,  3.53652573e+03,
+        4.99344130e+02, -1.94000462e+03, -1.17051040e+04,  1.87481977e+04,
+        1.57044532e+03,  1.34828858e+03, -6.06438581e+03, -1.10960226e+03,
+       -1.94755864e+02, -1.21220048e+02, -6.43663572e+02, -1.99765349e+03,
+       -3.63479229e+03, -5.45474493e+03,  2.82127770e+03,  1.03615597e+04,
+       -5.93894053e+02, -3.98220894e+03, -5.59531323e+03, -2.09633013e+03,
+        3.16665119e+03,  1.69189260e+03, -6.43120190e+03, -4.41683590e+03,
+       -6.50741689e+03,  2.93076133e+03,  3.28369596e+03,  6.60159288e+03,
+        2.72582423e+03,  4.41433453e+03, -1.71002318e+03,  1.13079566e+03,
+       -1.31894056e+03, -3.25757436e+03,  3.27564152e+02, -9.40299746e+03,
+        1.64885447e+04,  4.27353015e+02,  8.77701833e+03, -1.81875738e+03,
+       -4.42907719e+03,  4.36581742e+03, -9.76445933e+03, -1.27749876e+03,
+        5.39233368e+03,  2.93749538e+03, -1.24752682e+03, -3.16533240e+03,
+       -6.30607746e+03, -8.77105317e+02, -1.47122832e+03, -4.64169415e+03,
+       -5.75975708e+01, -5.25758069e+03, -4.05927046e+03, -1.65550879e+03,
+       -1.21105514e+04, -1.50900722e+04, -1.91244653e+04, -1.00849580e+04,
+       -7.89627021e+03, -1.98031386e+03, -5.43439063e+03, -8.01943549e+03,
+       -3.05203621e+03, -1.77312375e+03,  5.30940584e+03,  4.64980702e+03,
+       -2.07610941e+04, -9.72008646e+03, -8.96677539e+03, -4.57186800e+03,
+       -5.56782191e+03,  1.54650870e+04, -8.47354551e+03,  3.65172034e+03,
+        5.09200217e+04, -3.09386978e+03, -2.82439118e+03, -3.01301301e+03,
+       -9.40406490e+03, -3.40032574e+03,  3.46447645e+03,  6.24552203e+03,
+       -5.22203448e+03,  1.72026306e+04,  8.36038065e+03,  1.22717684e+04,
+       -1.67758637e+03,  4.22622802e+04, -3.93904962e+03,  1.39554067e+04,
+        3.42007445e+04, -1.09977410e+03,  3.67019108e+02,  1.58072861e+03,
+       -2.31412697e+03, -2.20305223e+03, -2.03462145e+03, -6.01835863e+03,
+       -8.84581962e+03, -2.63966583e+03,  8.25917372e+03, -4.70031571e+03,
+       -1.19738365e+03, -3.58410048e+03,  1.24855421e+02, -2.30190055e+03,
+       -2.80633396e+03,  2.72203627e+02, -1.84446448e+03,  1.88838450e+04,
+       -1.51465105e+04,  6.15099096e+04, -4.52930465e+03, -8.86767550e+03,
+       -6.42200680e+03,  6.76070236e+02, -6.76230398e+03,  4.17854676e+03,
+       -7.15728515e+03, -5.94185193e+03, -1.09025692e+04,  6.24048365e+03,
+       -2.13368853e+01, -1.72121441e+04,  2.63224399e+03, -9.18140653e+03,
+       -3.50399415e+03, -2.59230031e+03, -5.04072706e+03, -6.11797184e+01,
+        2.96592817e+04, -1.72747644e+03,  8.11066894e+03, -2.14580994e+03,
+       -2.72306230e+02, -1.09972721e+03,  4.88443879e+03,  3.07188901e+03,
+       -1.39817142e+03,  1.34836772e+02,  1.00933429e+04,  3.41183908e+03,
+       -8.03073153e+03, -1.42689332e+04, -5.94313665e+03, -1.09667492e+04,
+       -1.05078834e+02, -7.54499115e+02, -7.34398250e+02,  3.18728715e+03,
+       -9.41453934e+03,  2.43892616e+04,  2.64732549e+03,  3.03291563e+03,
+        7.15280658e+03,  4.50521399e+03,  2.56345070e+03,  3.09257402e+03,
+        2.89473996e+03,  1.37818145e+04,  1.23742542e+04,  7.43971861e+03,
+        1.95194418e+04,  6.49857415e+02, -1.50245500e+03, -3.82497095e+03,
+       -6.70269562e+03, -6.64753020e+03, -4.66050592e+03,  3.22232093e+03,
+        9.94423260e+02,  3.79453932e+02,  5.21126812e+03,  7.97307398e+03,
+       -1.84642409e+03,  4.98426827e+03, -5.85163263e+03,  8.45581019e+04,
+        1.26540032e+05, -4.11804804e+03, -1.58036265e+03, -2.97144499e+02,
+       -9.28300492e+03,  9.12746690e+02, -2.29113160e+03, -3.92526470e+03,
+       -1.07306113e+04, -7.23760048e+03, -2.88531637e+03, -5.33601948e+03,
+       -3.61280440e+03,  7.70319699e+02,  2.91887440e+03, -2.00862046e+04,
+        5.57031154e+03, -1.30225663e+03,  1.11928223e+04,  3.30159062e+03,
+       -6.60831232e+03, -5.79044906e+03, -3.86965184e+02,  5.80870785e+03,
+       -2.86653768e+03, -3.00892238e+03,  3.44368164e+02, -2.13161295e+02,
+        4.42072473e+03,  1.88382982e+03, -5.54559389e+03, -6.07632236e+02,
+       -1.61789716e+03, -1.22959507e+03, -1.05826795e+04, -3.75428193e+03,
+        4.36077725e+03,  1.56931707e+03, -2.04731517e+03, -2.62728908e+03,
+       -2.74122136e+03,  8.76574076e+02, -1.33626832e+03,  1.03458190e+03,
+       -3.18299304e+03,  1.12701464e+03, -1.23404740e+03, -4.80310040e+03,
+       -2.37034798e+03,  8.20106646e+02, -8.84775044e+03, -6.80337586e+03,
+       -6.68674563e+03,  1.29201580e+03,  1.75707230e+03,  6.87063128e+03,
+       -2.56317867e+03, -1.18145251e+03, -7.44505092e+03, -1.09771613e+03,
+        3.58845905e+03, -2.42884482e+03, -1.26331098e+03, -2.05761985e+04,
+        5.73267581e+03, -2.34334076e+03, -2.37483937e+03, -2.46514955e+02,
+       -3.60897120e+03, -4.27238818e+03, -2.25415369e+03,  7.55950354e+03,
+       -1.69655005e+03, -7.32777818e+03, -2.03203510e+03, -2.64179149e+03,
+        8.95035504e+02, -8.98624809e+02, -5.28801929e+02, -2.54263739e+03,
+       -1.70948706e+03, -3.74978761e+03, -1.58701062e+02,  3.33443031e+03,
+        1.83446018e+04,  3.07796400e+02, -4.61406126e+03, -8.15644759e+03,
+       -2.48271065e+03, -2.52772769e+03, -2.32725339e+02,  9.26262717e+03,
+       -1.31968444e+02,  7.90735476e+03, -1.70148085e+04, -4.07412475e+03,
+       -7.57724352e+03,  1.64875800e+04, -2.13135026e+03,  1.55857397e+04,
+        1.06807891e+04,  2.75729009e+04,  8.93100206e+02, -8.88953276e+02,
+       -2.47061835e+03,  4.24038521e+03,  2.57098506e+03, -2.51860053e+03,
+       -3.53234967e+03, -3.19120073e+03, -3.33091373e+03, -2.28306805e+03,
+        1.17662777e+04, -1.50981203e+04,  1.36551200e+04, -9.87707683e+03,
+       -8.71665398e+02, -2.02223993e+03, -9.51909928e+01,  1.45047572e+03,
+        8.51366066e+03, -2.59283374e+03, -6.68893597e+03,  1.12051988e+04,
+        4.31200735e+03,  1.04068484e+04,  1.13184404e+04, -1.47217734e+04,
+       -2.93545179e+03, -3.37717101e+03,  7.27725967e+03, -3.56822736e+03,
+       -1.77752334e+02, -9.93445646e+02, -1.22756421e+04,  5.75590031e+02,
+        1.05409717e+02, -5.94203213e+02, -7.88452478e+02,  6.24200353e+03,
+        1.01418517e+04,  3.36751825e+02, -1.54507843e+03,  7.67547132e+03,
+        1.50582864e+04,  4.17970933e+03,  2.63461441e+02, -2.55883716e+03,
+        7.11290502e+02, -5.27627020e+03, -7.34331977e+03, -8.48444623e+03,
+       -7.22300856e+03, -9.04925163e+03, -1.82848027e+02,  1.72729394e+04,
+       -1.56189813e+03,  2.96573923e+03, -1.54146991e+02,  9.72325764e+03,
+       -3.22218681e+03, -5.75975708e+01, -1.98031386e+03, -5.43439063e+03,
+        1.76238457e+03, -5.22203448e+03, -3.41186728e+03, -4.30937764e+03,
+       -1.62254654e+03, -3.63060904e+02,  5.34012686e+03,  8.69566609e+02,
+        1.75707230e+03, -1.26331098e+03,  1.83849835e+03, -1.85610751e+03,
+        1.31984484e+02, -2.78949521e+03, -3.79900417e+03, -3.36400352e+03,
+       -2.93879232e+03, -3.66924115e+03, -3.10296120e+03, -2.67751589e+03,
+       -3.02129946e+03, -3.68623991e+03, -2.14333157e+03, -2.07526460e+03,
+       -1.65023522e+03, -1.59364108e+03, -1.47554058e+03, -1.37434513e+03,
+       -1.19642161e+03, -1.13382107e+03, -9.35456659e+02, -7.73905420e+02,
+       -6.14461008e+02,  2.50195820e+02, -2.26767936e+02, -2.03155154e+02,
+       -2.04853191e+01,  1.58805968e+02,  4.73894324e+02,  7.78684098e+02,
+        1.13247029e+03,  1.33633329e+03,  1.58839366e+03,  2.64310931e+03,
+        2.15098087e+03,  2.45906810e+03,  2.74438782e+03,  3.00718204e+03,
+        3.35197023e+03,  3.72111629e+03,  3.94530760e+03,  4.18787540e+03,
+        4.74185820e+03,  5.79375183e+03, -7.92543758e+02,  6.42334617e+02,
+       -4.26318668e+02,  3.59077816e+02, -2.04279269e+02, -3.20564843e+02,
+       -8.75198044e+02,  1.30476128e+02, -8.09849927e+02,  5.11190182e+02,
+        6.07126091e+02,  6.83665336e+02, -1.06113528e+02, -3.77566114e+00,
+        1.74026138e+02, -2.44513508e+02, -6.80566485e+02,  3.78482438e+02,
+       -1.80441804e+02,  1.15778679e+03])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">lm_pipe</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7871510077904085
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19820180.859093003
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4451.986170137212
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2881.345892972646
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="model_1_SK-learn.html" title="previous page">First Model</a>
+    <a class='right-next' id="next-link" href="05_deployment.html" title="next page">Deployment</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hendrik Pfeifer<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

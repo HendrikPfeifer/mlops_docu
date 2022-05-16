@@ -1,0 +1,2546 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>First Model &#8212; MLOps Project SoSe 2022 - Documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/togglebutton.js"></script>
+    <script type="text/javascript" src="_static/clipboard.min.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <script type="text/javascript">var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script type="text/javascript" src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" type="text/javascript" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script type="text/javascript">
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SK-learn Model" href="model_2_SK-learn.html" />
+    <link rel="prev" title="Models" href="04_models.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/hdm-logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MLOps Project SoSe 2022 - Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="welcome.html">
+   Welcome to the documentation
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="content.html">
+   Content of the documentation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_business_case.html">
+     Business Case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_data_analysis.html">
+     Data analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_data_preperation.html">
+     Data preperation
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="04_models.html">
+     Models
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       First Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="model_2_SK-learn.html">
+       SK-learn Model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_deployment.html">
+     Deployment
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/model_1_SK-learn.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmodel_1_SK-learn.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/model_1_SK-learn.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   First Model
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-try-including-sk-learn-model-and-eda">
+     First try including sk-learn model and EDA
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-packages">
+     Load packages
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-dataset">
+     import dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nicht-benotigte-spalten-entfernen">
+   Nicht benötigte Spalten entfernen
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rename-columns">
+     Rename Columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fehlende-werte-loschen">
+   Fehlende Werte löschen
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alles-in-lowercase-umwandeln">
+   Alles in lowercase umwandeln
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kategorial-oder-numerisch">
+   Kategorial oder Numerisch?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-lists">
+   Variable lists
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#train-and-test-split">
+   Train and test split
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-exploration-set">
+   Data exploration set
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyze-data">
+   Analyze data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#categorical-data">
+     Categorical data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-data">
+     Numerical data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relationships">
+   Relationships
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlation-with-response">
+     Correlation with response
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fehlende-daten">
+   Fehlende Daten
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-pipeline">
+   Data Pipeline
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model">
+   Model
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-training">
+     Model Training
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-evaluation">
+   Model Evaluation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-tuning">
+   Model Tuning
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluate-best-model">
+   Evaluate best model
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluate-on-test-set">
+   Evaluate on test set
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="first-model">
+<h1>First Model<a class="headerlink" href="#first-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="first-try-including-sk-learn-model-and-eda">
+<h2>First try including sk-learn model and EDA<a class="headerlink" href="#first-try-including-sk-learn-model-and-eda" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="load-packages">
+<h2>Load packages<a class="headerlink" href="#load-packages" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="import-dataset">
+<h2>import dataset<a class="headerlink" href="#import-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;car_prices.csv&quot;</span><span class="p">,</span> <span class="n">on_bad_lines</span><span class="o">=</span><span class="s2">&quot;skip&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>make</th>
+      <th>model</th>
+      <th>trim</th>
+      <th>body</th>
+      <th>transmission</th>
+      <th>vin</th>
+      <th>state</th>
+      <th>condition</th>
+      <th>odometer</th>
+      <th>color</th>
+      <th>interior</th>
+      <th>seller</th>
+      <th>mmr</th>
+      <th>sellingprice</th>
+      <th>saledate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>Kia</td>
+      <td>Sorento</td>
+      <td>LX</td>
+      <td>SUV</td>
+      <td>automatic</td>
+      <td>5xyktca69fg566472</td>
+      <td>ca</td>
+      <td>5.0</td>
+      <td>16639.0</td>
+      <td>white</td>
+      <td>black</td>
+      <td>kia motors america, inc</td>
+      <td>20500</td>
+      <td>21500</td>
+      <td>Tue Dec 16 2014 12:30:00 GMT-0800 (PST)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015</td>
+      <td>Kia</td>
+      <td>Sorento</td>
+      <td>LX</td>
+      <td>SUV</td>
+      <td>automatic</td>
+      <td>5xyktca69fg561319</td>
+      <td>ca</td>
+      <td>5.0</td>
+      <td>9393.0</td>
+      <td>white</td>
+      <td>beige</td>
+      <td>kia motors america, inc</td>
+      <td>20800</td>
+      <td>21500</td>
+      <td>Tue Dec 16 2014 12:30:00 GMT-0800 (PST)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We have </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> observations and </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="si">}</span><span class="s2"> columns in our dataset.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We have 558,811 observations and 16 columns in our dataset.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;year&#39;, &#39;make&#39;, &#39;model&#39;, &#39;trim&#39;, &#39;body&#39;, &#39;transmission&#39;, &#39;vin&#39;, &#39;state&#39;,
+       &#39;condition&#39;, &#39;odometer&#39;, &#39;color&#39;, &#39;interior&#39;, &#39;seller&#39;, &#39;mmr&#39;,
+       &#39;sellingprice&#39;, &#39;saledate&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year              int64
+make             object
+model            object
+trim             object
+body             object
+transmission     object
+vin              object
+state            object
+condition       float64
+odometer        float64
+color            object
+interior         object
+seller           object
+mmr               int64
+sellingprice      int64
+saledate         object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 558811 entries, 0 to 558810
+Data columns (total 16 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   year          558811 non-null  int64  
+ 1   make          548510 non-null  object 
+ 2   model         548412 non-null  object 
+ 3   trim          548160 non-null  object 
+ 4   body          545616 non-null  object 
+ 5   transmission  493458 non-null  object 
+ 6   vin           558811 non-null  object 
+ 7   state         558811 non-null  object 
+ 8   condition     547017 non-null  float64
+ 9   odometer      558717 non-null  float64
+ 10  color         558062 non-null  object 
+ 11  interior      558062 non-null  object 
+ 12  seller        558811 non-null  object 
+ 13  mmr           558811 non-null  int64  
+ 14  sellingprice  558811 non-null  int64  
+ 15  saledate      558811 non-null  object 
+dtypes: float64(2), int64(3), object(11)
+memory usage: 68.2+ MB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nicht-benotigte-spalten-entfernen">
+<h1>Nicht benötigte Spalten entfernen<a class="headerlink" href="#nicht-benotigte-spalten-entfernen" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>trim</p></li>
+<li><p>vin</p></li>
+<li><p>mmr</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;trim&quot;</span><span class="p">,</span> <span class="s2">&quot;vin&quot;</span><span class="p">,</span> <span class="s2">&quot;mmr&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 558811 entries, 0 to 558810
+Data columns (total 13 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   year          558811 non-null  int64  
+ 1   make          548510 non-null  object 
+ 2   model         548412 non-null  object 
+ 3   body          545616 non-null  object 
+ 4   transmission  493458 non-null  object 
+ 5   state         558811 non-null  object 
+ 6   condition     547017 non-null  float64
+ 7   odometer      558717 non-null  float64
+ 8   color         558062 non-null  object 
+ 9   interior      558062 non-null  object 
+ 10  seller        558811 non-null  object 
+ 11  sellingprice  558811 non-null  int64  
+ 12  saledate      558811 non-null  object 
+dtypes: float64(2), int64(2), object(9)
+memory usage: 55.4+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rename-columns">
+<h2>Rename Columns<a class="headerlink" href="#rename-columns" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+<span class="s2">&quot;make&quot;</span> <span class="p">:</span> <span class="s2">&quot;brand&quot;</span><span class="p">,</span>
+<span class="s2">&quot;body&quot;</span> <span class="p">:</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span>
+<span class="s2">&quot;transmission&quot;</span> <span class="p">:</span> <span class="s2">&quot;drivetrain&quot;</span><span class="p">,</span>
+<span class="s2">&quot;odometer&quot;</span> <span class="p">:</span> <span class="s2">&quot;miles&quot;</span><span class="p">}</span> 
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 558811 entries, 0 to 558810
+Data columns (total 13 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   year          558811 non-null  int64  
+ 1   brand         548510 non-null  object 
+ 2   model         548412 non-null  object 
+ 3   type          545616 non-null  object 
+ 4   drivetrain    493458 non-null  object 
+ 5   state         558811 non-null  object 
+ 6   condition     547017 non-null  float64
+ 7   miles         558717 non-null  float64
+ 8   color         558062 non-null  object 
+ 9   interior      558062 non-null  object 
+ 10  seller        558811 non-null  object 
+ 11  sellingprice  558811 non-null  int64  
+ 12  saledate      558811 non-null  object 
+dtypes: float64(2), int64(2), object(9)
+memory usage: 55.4+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year              int64
+brand            object
+model            object
+type             object
+drivetrain       object
+state            object
+condition       float64
+miles           float64
+color            object
+interior         object
+seller           object
+sellingprice      int64
+saledate         object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fehlende-werte-loschen">
+<h1>Fehlende Werte löschen<a class="headerlink" href="#fehlende-werte-loschen" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fehlende Werte ermitteln</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year                0
+brand           10301
+model           10399
+type            13195
+drivetrain      65353
+state               0
+condition       11794
+miles              94
+color             749
+interior          749
+seller              0
+sellingprice        0
+saledate            0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year            0
+brand           0
+model           0
+type            0
+drivetrain      0
+state           0
+condition       0
+miles           0
+color           0
+interior        0
+seller          0
+sellingprice    0
+saledate        0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="alles-in-lowercase-umwandeln">
+<h1>Alles in lowercase umwandeln<a class="headerlink" href="#alles-in-lowercase-umwandeln" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ford             81014
+Chevrolet        54150
+Nissan           44043
+Toyota           35313
+Dodge            27183
+Honda            24781
+Hyundai          18663
+BMW              17509
+Kia              15830
+Chrysler         15135
+Infiniti         14011
+Mercedes-Benz    14008
+Jeep             12735
+Volkswagen       10780
+Lexus            10409
+GMC               9217
+Mazda             6930
+Cadillac          6315
+Lincoln           4926
+Audi              4802
+Acura             4503
+Buick             4470
+Subaru            4369
+Ram               4044
+Pontiac           4018
+Mitsubishi        3661
+Volvo             3082
+MINI              2946
+Saturn            2570
+Mercury           1571
+Scion             1545
+Land Rover        1322
+Jaguar            1257
+Porsche           1157
+Suzuki             977
+HUMMER             768
+FIAT               725
+Saab               416
+smart              343
+Oldsmobile         318
+Isuzu              179
+Maserati           109
+Bentley            105
+Aston Martin        24
+Tesla               23
+Ferrari             17
+Rolls-Royce         16
+Plymouth            16
+Geo                 16
+Fisker               9
+Lamborghini          3
+Daewoo               2
+Lotus                1
+Name: brand, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;brand&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      kia
+1      kia
+2      bmw
+3    volvo
+4      bmw
+Name: brand, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="kategorial-oder-numerisch">
+<h1>Kategorial oder Numerisch?<a class="headerlink" href="#kategorial-oder-numerisch" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>year = categorial</p></li>
+<li><p>brand = categorial</p></li>
+<li><p>model = categorial</p></li>
+<li><p>type = categorial</p></li>
+<li><p>drivetrain = categorial</p></li>
+<li><p>state = categorial</p></li>
+<li><p>condition = categorial</p></li>
+<li><p>miles = numeric</p></li>
+<li><p>color = categorial</p></li>
+<li><p>interior = categorial</p></li>
+<li><p>seller = categorial</p></li>
+<li><p>ratingprice = numeric</p></li>
+<li><p>sellingprice = numeric</p></li>
+<li><p>saledate = categorial</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># In kategorische Variablen umwandeln:</span>
+
+<span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;brand&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;drivetrain&quot;</span><span class="p">,</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;condition&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;interior&quot;</span><span class="p">,</span> <span class="s2">&quot;seller&quot;</span><span class="p">,</span> <span class="s2">&quot;saledate&quot;</span><span class="p">]:</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">cat</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cat</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year            category
+brand           category
+model           category
+type            category
+drivetrain      category
+state           category
+condition       category
+miles            float64
+color           category
+interior        category
+seller          category
+sellingprice       int64
+saledate        category
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>year</th>
+      <td>472336</td>
+      <td>26</td>
+      <td>2013</td>
+      <td>87474</td>
+    </tr>
+    <tr>
+      <th>brand</th>
+      <td>472336</td>
+      <td>53</td>
+      <td>ford</td>
+      <td>81014</td>
+    </tr>
+    <tr>
+      <th>model</th>
+      <td>472336</td>
+      <td>764</td>
+      <td>altima</td>
+      <td>16346</td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td>472336</td>
+      <td>45</td>
+      <td>sedan</td>
+      <td>211308</td>
+    </tr>
+    <tr>
+      <th>drivetrain</th>
+      <td>472336</td>
+      <td>2</td>
+      <td>automatic</td>
+      <td>455974</td>
+    </tr>
+    <tr>
+      <th>state</th>
+      <td>472336</td>
+      <td>34</td>
+      <td>fl</td>
+      <td>75243</td>
+    </tr>
+    <tr>
+      <th>condition</th>
+      <td>472336.0</td>
+      <td>41.0</td>
+      <td>1.9</td>
+      <td>36652.0</td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td>472336</td>
+      <td>20</td>
+      <td>black</td>
+      <td>93245</td>
+    </tr>
+    <tr>
+      <th>interior</th>
+      <td>472336</td>
+      <td>17</td>
+      <td>black</td>
+      <td>209870</td>
+    </tr>
+    <tr>
+      <th>seller</th>
+      <td>472336</td>
+      <td>11927</td>
+      <td>ford motor credit company,llc</td>
+      <td>17756</td>
+    </tr>
+    <tr>
+      <th>saledate</th>
+      <td>472336</td>
+      <td>3609</td>
+      <td>Tue Feb 10 2015 01:30:00 GMT-0800 (PST)</td>
+      <td>5004</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>miles</th>
+      <th>sellingprice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>472336.000000</td>
+      <td>472336.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>66701.070003</td>
+      <td>13690.403670</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>51939.183430</td>
+      <td>9612.962279</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>28137.000000</td>
+      <td>7200.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>51084.000000</td>
+      <td>12200.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>96589.000000</td>
+      <td>18200.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>999999.000000</td>
+      <td>230000.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="variable-lists">
+<h1>Variable lists<a class="headerlink" href="#variable-lists" title="Permalink to this headline">¶</a></h1>
+<p>Furthermore, we prepare our data for the following processes of data splitting and building of data pipelines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of all numerical data</span>
+<span class="n">list_num</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># list of all categorical data</span>
+<span class="n">list_cat</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">list_num</span><span class="p">,</span> <span class="n">list_cat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;miles&#39;, &#39;sellingprice&#39;] [&#39;year&#39;, &#39;brand&#39;, &#39;model&#39;, &#39;type&#39;, &#39;drivetrain&#39;, &#39;state&#39;, &#39;condition&#39;, &#39;color&#39;, &#39;interior&#39;, &#39;seller&#39;, &#39;saledate&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define outcome variable as y_label</span>
+<span class="n">y_label</span> <span class="o">=</span> <span class="s1">&#39;sellingprice&#39;</span>
+
+<span class="c1"># select features</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">y_label</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># create feature data for data splitting</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+
+<span class="c1"># list of numeric features</span>
+<span class="n">feat_num</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># list of categorical features</span>
+<span class="n">feat_cat</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> 
+
+<span class="c1"># create response for data splitting</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">y_label</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">feat_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;miles&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="train-and-test-split">
+<h1>Train and test split<a class="headerlink" href="#train-and-test-split" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-exploration-set">
+<h1>Data exploration set<a class="headerlink" href="#data-exploration-set" title="Permalink to this headline">¶</a></h1>
+<p>We make a copy of the training data since we don’t want to alter our data during data exploration. We will use this data for our exploratory data analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+<span class="n">df_train</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y_train</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="analyze-data">
+<h1>Analyze data<a class="headerlink" href="#analyze-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="categorical-data">
+<h2>Categorical data<a class="headerlink" href="#categorical-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>year</th>
+      <td>377868</td>
+      <td>26</td>
+      <td>2012</td>
+      <td>69957</td>
+    </tr>
+    <tr>
+      <th>brand</th>
+      <td>377868</td>
+      <td>53</td>
+      <td>ford</td>
+      <td>64731</td>
+    </tr>
+    <tr>
+      <th>model</th>
+      <td>377868</td>
+      <td>754</td>
+      <td>altima</td>
+      <td>13048</td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td>377868</td>
+      <td>44</td>
+      <td>sedan</td>
+      <td>168956</td>
+    </tr>
+    <tr>
+      <th>drivetrain</th>
+      <td>377868</td>
+      <td>2</td>
+      <td>automatic</td>
+      <td>364819</td>
+    </tr>
+    <tr>
+      <th>state</th>
+      <td>377868</td>
+      <td>34</td>
+      <td>fl</td>
+      <td>60273</td>
+    </tr>
+    <tr>
+      <th>condition</th>
+      <td>377868.0</td>
+      <td>41.0</td>
+      <td>1.9</td>
+      <td>29476.0</td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td>377868</td>
+      <td>20</td>
+      <td>black</td>
+      <td>74688</td>
+    </tr>
+    <tr>
+      <th>interior</th>
+      <td>377868</td>
+      <td>17</td>
+      <td>black</td>
+      <td>167865</td>
+    </tr>
+    <tr>
+      <th>seller</th>
+      <td>377868</td>
+      <td>11070</td>
+      <td>ford motor credit company,llc</td>
+      <td>14152</td>
+    </tr>
+    <tr>
+      <th>saledate</th>
+      <td>377868</td>
+      <td>3485</td>
+      <td>Tue Feb 10 2015 01:30:00 GMT-0800 (PST)</td>
+      <td>4004</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">list_cat</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">df_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year 
+ 2012    69957
+2013    69718
+2014    55689
+2011    33096
+2008    21642
+2007    20355
+2010    18143
+2006    17315
+2009    14412
+2005    13765
+2004    10921
+2003     8309
+2015     6433
+2002     6140
+2001     4119
+2000     2740
+1999     1783
+1998     1180
+1997      825
+1996      449
+1995      392
+1994      229
+1993      106
+1992       82
+1991       43
+1990       25
+Name: year, dtype: int64
+brand 
+ ford             64731
+chevrolet        43371
+nissan           35258
+toyota           28151
+dodge            21684
+honda            19839
+hyundai          14898
+bmw              14090
+kia              12707
+chrysler         12082
+infiniti         11248
+mercedes-benz    11162
+jeep             10169
+volkswagen        8648
+lexus             8339
+gmc               7374
+mazda             5514
+cadillac          5070
+lincoln           3916
+audi              3828
+acura             3616
+buick             3585
+subaru            3519
+pontiac           3272
+ram               3236
+mitsubishi        2927
+volvo             2463
+mini              2351
+saturn            2056
+mercury           1259
+scion             1234
+land rover        1077
+jaguar            1005
+porsche            930
+suzuki             784
+hummer             619
+fiat               564
+saab               338
+smart              271
+oldsmobile         259
+isuzu              153
+bentley             87
+maserati            82
+tesla               18
+aston martin        18
+rolls-royce         15
+geo                 15
+plymouth            13
+ferrari             10
+fisker               8
+lamborghini          3
+lotus                1
+daewoo               1
+Name: brand, dtype: int64
+model 
+ altima       13048
+fusion        9638
+f-150         9496
+camry         8730
+escape        8549
+             ...  
+q3               0
+gransport        0
+ram van          0
+h1               0
+8 series         0
+Name: model, Length: 764, dtype: int64
+type 
+ sedan                      168956
+suv                         96929
+hatchback                   19036
+minivan                     17416
+coupe                       12771
+wagon                       11427
+crew cab                    11406
+convertible                  7430
+supercrew                    6001
+g sedan                      5611
+supercab                     3349
+regular cab                  3254
+extended cab                 3152
+van                          2820
+quad cab                     2818
+g coupe                      1192
+double cab                   1187
+e-series van                  873
+crewmax cab                   400
+king cab                      363
+g convertible                 244
+genesis coupe                 229
+access cab                    217
+koup                          143
+club cab                      123
+cts coupe                      99
+mega cab                       74
+elantra coupe                  70
+promaster cargo van            45
+beetle convertible             39
+q60 coupe                      27
+q60 convertible                25
+tsx sport wagon                25
+xtracab                        23
+cts-v coupe                    20
+g37 convertible                15
+transit van                    14
+regular-cab                    12
+g37 coupe                      10
+granturismo convertible         9
+cts wagon                       7
+cab plus 4                      3
+cab plus                        3
+cts-v wagon                     1
+ram van                         0
+Name: type, dtype: int64
+drivetrain 
+ automatic    364819
+manual        13049
+Name: drivetrain, dtype: int64
+state 
+ fl    60273
+ca    53080
+tx    33286
+ga    24699
+pa    19307
+nj    18398
+il    17106
+oh    16371
+tn    15383
+nc    14980
+mo    12157
+mi    11358
+nv     9354
+md     7765
+va     7514
+wi     7307
+mn     6867
+az     6143
+wa     5588
+co     5021
+ma     4941
+ny     3824
+in     3127
+sc     2995
+ne     2981
+pr     1928
+ut     1383
+la     1374
+ms     1368
+hi      962
+or      832
+nm      130
+ok       45
+al       21
+Name: state, dtype: int64
+condition 
+ 1.9    29476
+3.5    18500
+3.7    18084
+4.4    17729
+4.3    17269
+4.2    16839
+3.6    16081
+4.1    16018
+3.9    13965
+2.0    13852
+4.0    13618
+2.8    13350
+2.9    13157
+3.8    13063
+3.4    12160
+2.7    11363
+4.9     8864
+2.5     8824
+4.6     8645
+4.8     8643
+4.5     8585
+2.6     8227
+4.7     7746
+5.0     7519
+3.3     7404
+3.0     7351
+3.2     6907
+2.4     6510
+2.1     6427
+3.1     6343
+2.3     5660
+1.0     4621
+2.2     4181
+1.8      232
+1.7      166
+1.6      114
+1.4       95
+1.5       89
+1.1       69
+1.2       66
+1.3       56
+Name: condition, dtype: int64
+color 
+ black        74688
+white        71536
+silver       56907
+gray         56416
+blue         34494
+red          29852
+—            17575
+gold          7634
+green         7418
+burgundy      6030
+beige         5955
+brown         4502
+orange        1430
+purple        1024
+off-white     1001
+yellow         868
+charcoal       347
+turquoise      153
+pink            30
+lime             8
+Name: color, dtype: int64
+interior 
+ black        167865
+gray         122090
+beige         40401
+tan           30188
+—              7861
+brown          5754
+red             872
+silver          799
+blue            733
+off-white       270
+gold            231
+purple          228
+white           175
+green           165
+burgundy        116
+orange          103
+yellow           17
+Name: interior, dtype: int64
+seller 
+ ford motor credit company,llc            14152
+the hertz corporation                    12938
+nissan-infiniti lt                       12620
+santander consumer                       11391
+avis corporation                          9173
+                                         ...  
+enterprise car sales/farmington hills        0
+republic finance llc/gramercy                0
+primeritus remarketing/sas                   0
+enterprise rent a car/london                 0
+lou fusz subaru st peters                    0
+Name: seller, Length: 11927, dtype: int64
+saledate 
+ Tue Feb 10 2015 01:30:00 GMT-0800 (PST)    4004
+Tue Feb 17 2015 01:30:00 GMT-0800 (PST)    3753
+Tue Jan 27 2015 01:30:00 GMT-0800 (PST)    3748
+Tue Jan 20 2015 01:30:00 GMT-0800 (PST)    3591
+Tue Mar 03 2015 01:30:00 GMT-0800 (PST)    3544
+                                           ... 
+Fri Jan 09 2015 10:30:00 GMT-0800 (PST)       0
+Wed Apr 08 2015 04:30:00 GMT-0700 (PDT)       0
+Wed Apr 08 2015 02:35:00 GMT-0700 (PDT)       0
+Fri Jan 09 2015 02:20:00 GMT-0800 (PST)       0
+Tue Feb 03 2015 18:00:00 GMT-0800 (PST)       0
+Name: saledate, Length: 3609, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">list_cat</span><span class="p">:</span>
+
+    <span class="n">TOP_10</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+
+    <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> 
+            <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> 
+            <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;ch:.25&quot;</span><span class="p">,</span> 
+            <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="n">TOP_10</span><span class="p">)</span>    
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_1_SK-learn_41_0.png" src="_images/model_1_SK-learn_41_0.png" />
+<img alt="_images/model_1_SK-learn_41_1.png" src="_images/model_1_SK-learn_41_1.png" />
+<img alt="_images/model_1_SK-learn_41_2.png" src="_images/model_1_SK-learn_41_2.png" />
+<img alt="_images/model_1_SK-learn_41_3.png" src="_images/model_1_SK-learn_41_3.png" />
+<img alt="_images/model_1_SK-learn_41_4.png" src="_images/model_1_SK-learn_41_4.png" />
+<img alt="_images/model_1_SK-learn_41_5.png" src="_images/model_1_SK-learn_41_5.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.7/site-packages/pandas/io/formats/format.py:1429: FutureWarning: Index.ravel returning ndarray is deprecated; in a future version this will return a view on self.
+  for val, m in zip(values.ravel(), mask.ravel())
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.7/site-packages/pandas/io/formats/format.py:1429: FutureWarning: Index.ravel returning ndarray is deprecated; in a future version this will return a view on self.
+  for val, m in zip(values.ravel(), mask.ravel())
+</pre></div>
+</div>
+<img alt="_images/model_1_SK-learn_41_8.png" src="_images/model_1_SK-learn_41_8.png" />
+<img alt="_images/model_1_SK-learn_41_9.png" src="_images/model_1_SK-learn_41_9.png" />
+<img alt="_images/model_1_SK-learn_41_10.png" src="_images/model_1_SK-learn_41_10.png" />
+<img alt="_images/model_1_SK-learn_41_11.png" src="_images/model_1_SK-learn_41_11.png" />
+<img alt="_images/model_1_SK-learn_41_12.png" src="_images/model_1_SK-learn_41_12.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Numercial gruped by categorical</span>
+<span class="c1"># median</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">list_cat</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df_train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year              1990      1991      1992      1993      1994      1995  \
+miles         129102.0  166788.0  156969.5  171030.0  160518.0  170083.0   
+sellingprice     425.0     400.0     450.0     600.0     500.0     550.0   
+
+year              1996      1997      1998      1999  ...      2006      2007  \
+miles         166638.0  162319.0  163262.0  158782.0  ...  114514.0  107222.0   
+sellingprice     650.0     800.0     950.0    1050.0  ...    5100.0    6700.0   
+
+year             2008     2009     2010     2011     2012     2013     2014  \
+miles         97236.0  88692.0  76820.0  53122.5  37700.0  35046.0  19529.0   
+sellingprice   8100.0   8700.0  10400.0  14600.0  14100.0  14500.0  17400.0   
+
+year             2015  
+miles         11551.0  
+sellingprice  21800.0  
+
+[2 rows x 26 columns]
+brand           acura  aston martin     audi  bentley      bmw    buick  \
+miles         85377.0       22068.5  58195.0  34760.0  50345.5  74334.0   
+sellingprice  12500.0       52250.0  18500.0  64500.0  20250.0  10300.0   
+
+brand         cadillac  chevrolet  chrysler   daewoo  ...      saab    saturn  \
+miles          84297.0    64401.0   55482.5  69106.0  ...  101433.5  112302.0   
+sellingprice   12800.0    10350.0    9900.0    300.0  ...    3050.0    2700.0   
+
+brand           scion    smart   subaru   suzuki    tesla   toyota  \
+miles         47673.0  25152.0  34907.0  92567.0  15803.5  52705.0   
+sellingprice   9200.0   5900.0  17000.0   3200.0  65750.0  12300.0   
+
+brand         volkswagen    volvo  
+miles            56264.0  85198.0  
+sellingprice      9750.0   7400.0  
+
+[2 rows x 53 columns]
+model         1 series     1500  190-class  2 series      200     200sx  \
+miles          36953.0  27699.0   153164.0    4233.0  37287.0  170216.0   
+sellingprice   19775.0  22900.0      750.0   39600.0  10600.0     750.0   
+
+model            2500        3  3 series  3 series gran turismo  ...    yaris  \
+miles         30613.0  46967.0   50103.0                 4987.0  ...  53827.5   
+sellingprice  33400.0  12500.0   17250.0                38675.0  ...   8000.0   
+
+model            yukon  yukon denali  yukon hybrid  yukon xl       z3  \
+miles         108907.0      127151.0       93246.0  110218.0  98641.0   
+sellingprice   14850.0        1600.0       17000.0   14200.0   4350.0   
+
+model              z4     z4 m      zdx    zephyr  
+miles         40211.5  78425.0  38893.0  109026.0  
+sellingprice  25125.0  21250.0  25700.0    4300.0  
+
+[2 rows x 764 columns]
+type          access cab  beetle convertible  cab plus  cab plus 4  club cab  \
+miles            67001.0             11164.0  120154.0     64289.0  106034.0   
+sellingprice     15100.0             18000.0    4100.0      9800.0    4500.0   
+
+type          convertible    coupe  crew cab  crewmax cab  cts coupe  ...  \
+miles             54998.5  50649.0   71600.0      55924.5    36406.0  ...   
+sellingprice      13900.0  13700.0   21300.0      26600.0    22400.0  ...   
+
+type          regular-cab    sedan  supercab  supercrew      suv  transit van  \
+miles              9636.5  47298.0   80015.0    50534.0  57598.0      13387.0   
+sellingprice      17300.0  11000.0   12300.0    23600.0  15100.0      24600.0   
+
+type          tsx sport wagon      van    wagon   xtracab  
+miles                 33642.0  54522.5  69833.0  167059.0  
+sellingprice          17900.0  15850.0   8800.0    5900.0  
+
+[2 rows x 45 columns]
+drivetrain    automatic   manual
+miles           50685.0  65060.0
+sellingprice    12300.0   8900.0
+state               al       az       ca       co       fl       ga       hi  \
+miles         111959.0  58194.0  50559.0  40423.0  43182.0  60163.0  32711.5   
+sellingprice    7700.0  11000.0  12600.0  14400.0  12900.0  11400.0  12000.0   
+
+state              il       in       la  ...       or       pa       pr  \
+miles         33317.0  62620.0  64684.0  ...  48500.5  44256.0  43337.0   
+sellingprice  14300.0   9900.0   9700.0  ...  11100.0  12800.0   9000.0   
+
+state              sc       tn       tx       ut       va       wa       wi  
+miles         74328.0  37275.0  56952.0  86975.0  96721.5  40534.0  52718.0  
+sellingprice   9700.0  16200.0  12000.0  10500.0   6900.0  13500.0  12500.0  
+
+[2 rows x 34 columns]
+condition          1.0       1.1       1.2       1.3       1.4       1.5  \
+miles         110223.0  101959.0  128117.0  110369.5  118366.0  114571.0   
+sellingprice    2000.0    3900.0    2650.0    2450.0    2500.0    2600.0   
+
+condition          1.6       1.7       1.8       1.9  ...      4.1      4.2  \
+miles         117775.5  113929.0  108189.5  116555.5  ...  38724.5  36322.0   
+sellingprice    2900.0    2800.0    3200.0    3650.0  ...  15000.0  15600.0   
+
+condition         4.3      4.4      4.5      4.6      4.7      4.8      4.9  \
+miles         33518.0  30937.0  27887.0  26207.0  24600.0  22272.0  18021.5   
+sellingprice  16400.0  17000.0  17750.0  18200.0  18700.0  19000.0  20500.0   
+
+condition         5.0  
+miles         13797.0  
+sellingprice  22200.0  
+
+[2 rows x 41 columns]
+color           beige    black     blue    brown  burgundy  charcoal     gold  \
+miles         88533.0  46945.0  60372.5  41150.0   63472.5   40394.0  96432.5   
+sellingprice   7900.0  13500.0  10700.0  14100.0   11500.0   14300.0   6500.0   
+
+color            gray    green     lime  off-white   orange     pink   purple  \
+miles         46915.0  92320.0  40462.5    58781.0  56005.5  40563.0  53121.0   
+sellingprice  12500.0   6500.0   9950.0    13200.0  11600.0   9750.0  12450.0   
+
+color             red   silver  turquoise    white   yellow        —  
+miles         46274.0  59405.0    89541.0  47970.0  67649.0  32814.0  
+sellingprice  11700.0  10700.0     7400.0  13200.0  10500.0  16000.0  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interior        beige    black     blue    brown  burgundy     gold     gray  \
+miles         58023.0  40816.0  99307.0  51089.0   51998.5  72910.0  66996.5   
+sellingprice  12000.0  13700.0   4600.0  18700.0   14850.0   9900.0  10100.0   
+
+interior        green  off-white   orange   purple      red   silver      tan  \
+miles         75286.0    26677.0  54560.0  52424.0  34424.5  83606.0  71672.5   
+sellingprice   9000.0    28750.0  16400.0  11300.0  20900.0   9200.0  11100.0   
+
+interior        white   yellow        —  
+miles         43255.0  31684.0  58799.0  
+sellingprice  16400.0   9600.0  10600.0  
+seller        1 cochran of monroeville  101motors  143 auto sales inc  \
+miles                         106396.0    98491.0             93990.0   
+sellingprice                    4200.0     3750.0              4000.0   
+
+seller        159191 canada inc  1st advantage fcu  1st capital finance  \
+miles                   56534.0            92626.0             200903.0   
+sellingprice            19100.0             8200.0                400.0   
+
+seller        1st choice automotive corp  1st choice credit union  \
+miles                           103250.5                  99599.0   
+sellingprice                      7750.0                  10000.0   
+
+seller        1st choice money center  1st class auto  ...  \
+miles                         78577.0        103321.0  ...   
+sellingprice                    450.0          3300.0  ...   
+
+seller        zimbrick volkswagen of madison  zimmerman auto brokers inc  \
+miles                                62834.5                     55177.0   
+sellingprice                         12000.0                     14400.0   
+
+seller        zinc auto finance  zinc used auto sales   zipcar  \
+miles                  128509.0               77911.0  39635.0   
+sellingprice             4100.0               19000.0  10000.0   
+
+seller        zippy rent a car llc  zmax moto leasing inc  zuma autoboat  \
+miles                     119381.0               151800.5       150218.0   
+sellingprice                4000.0                 6400.0        10000.0   
+
+seller        zumbrota ford sales llc  zygi auto corp  
+miles                             NaN         85419.0  
+sellingprice                      NaN          7750.0  
+
+[2 rows x 11927 columns]
+saledate      Fri Apr 03 2015 02:00:00 GMT-0700 (PDT)  \
+miles                                         37281.0   
+sellingprice                                  16600.0   
+
+saledate      Fri Apr 03 2015 02:15:00 GMT-0700 (PDT)  \
+miles                                         38545.0   
+sellingprice                                  12800.0   
+
+saledate      Fri Apr 03 2015 02:20:00 GMT-0700 (PDT)  \
+miles                                             1.0   
+sellingprice                                   2000.0   
+
+saledate      Fri Apr 03 2015 03:45:00 GMT-0700 (PDT)  \
+miles                                        123997.0   
+sellingprice                                   9900.0   
+
+saledate      Fri Apr 10 2015 02:00:00 GMT-0700 (PDT)  \
+miles                                         32770.0   
+sellingprice                                  13200.0   
+
+saledate      Fri Apr 10 2015 02:25:00 GMT-0700 (PDT)  \
+miles                                             NaN   
+sellingprice                                      NaN   
+
+saledate      Fri Apr 10 2015 04:45:00 GMT-0700 (PDT)  \
+miles                                         55388.0   
+sellingprice                                  16900.0   
+
+saledate      Fri Apr 10 2015 05:00:00 GMT-0700 (PDT)  \
+miles                                        102948.0   
+sellingprice                                   6900.0   
+
+saledate      Fri Apr 17 2015 01:29:00 GMT-0700 (PDT)  \
+miles                                         92541.0   
+sellingprice                                    800.0   
+
+saledate      Fri Apr 17 2015 02:00:00 GMT-0700 (PDT)  ...  \
+miles                                         32275.5  ...   
+sellingprice                                  14400.0  ...   
+
+saledate      Wed May 27 2015 08:25:00 GMT-0700 (PDT)  \
+miles                                        128415.0   
+sellingprice                                   4600.0   
+
+saledate      Wed May 27 2015 08:30:00 GMT-0700 (PDT)  \
+miles                                         39701.0   
+sellingprice                                  13000.0   
+
+saledate      Wed May 27 2015 08:35:00 GMT-0700 (PDT)  \
+miles                                         38935.5   
+sellingprice                                  13525.0   
+
+saledate      Wed May 27 2015 08:40:00 GMT-0700 (PDT)  \
+miles                                         56599.0   
+sellingprice                                  10700.0   
+
+saledate      Wed May 27 2015 09:00:00 GMT-0700 (PDT)  \
+miles                                        141466.0   
+sellingprice                                   1100.0   
+
+saledate      Wed May 27 2015 10:10:00 GMT-0700 (PDT)  \
+miles                                         57126.0   
+sellingprice                                  10250.0   
+
+saledate      Wed May 27 2015 10:15:00 GMT-0700 (PDT)  \
+miles                                         88643.0   
+sellingprice                                   8300.0   
+
+saledate      Wed May 27 2015 10:20:00 GMT-0700 (PDT)  \
+miles                                        171399.0   
+sellingprice                                   1300.0   
+
+saledate      Wed May 27 2015 10:25:00 GMT-0700 (PDT)  \
+miles                                         90545.0   
+sellingprice                                   5000.0   
+
+saledate      Wed May 27 2015 17:00:00 GMT-0700 (PDT)  
+miles                                         99943.0  
+sellingprice                                   5500.0  
+
+[2 rows x 3609 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="numerical-data">
+<h2>Numerical data<a class="headerlink" href="#numerical-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># summary of numerical attributes</span>
+<span class="n">df_train</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>miles</th>
+      <td>377868.0</td>
+      <td>66715.77</td>
+      <td>51970.53</td>
+      <td>1.0</td>
+      <td>28151.0</td>
+      <td>51102.0</td>
+      <td>96611.0</td>
+      <td>999999.0</td>
+    </tr>
+    <tr>
+      <th>sellingprice</th>
+      <td>377868.0</td>
+      <td>13691.10</td>
+      <td>9608.59</td>
+      <td>1.0</td>
+      <td>7200.0</td>
+      <td>12200.0</td>
+      <td>18200.0</td>
+      <td>183000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># histograms</span>
+<span class="n">df_train</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_1_SK-learn_45_0.png" src="_images/model_1_SK-learn_45_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="relationships">
+<h1>Relationships<a class="headerlink" href="#relationships" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="correlation-with-response">
+<h2>Correlation with response<a class="headerlink" href="#correlation-with-response" title="Permalink to this headline">¶</a></h2>
+<p>Detect the relationship between each predictor and the response:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#sns.pairplot(data=df_train, y_vars=y_label, x_vars=features);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pairplot with one categorical variable</span>
+<span class="c1">#sns.pairplot(data=df_train, y_vars=y_label, x_vars=features);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># inspect correlation</span>
+<span class="c1">#corr = df_train.corr()</span>
+<span class="c1">#corr_matrix[y_label].sort_values(ascending=False)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_train</span><span class="o">.</span><span class="n">corr</span><span class="p">())</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df_train</span><span class="o">.</span><span class="n">corr</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 miles  sellingprice
+miles         1.000000     -0.577659
+sellingprice -0.577659      1.000000
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/model_1_SK-learn_49_2.png" src="_images/model_1_SK-learn_49_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data exploration</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">,</span> <span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df_train</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_1_SK-learn_51_0.png" src="_images/model_1_SK-learn_51_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_train</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;miles&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;miles&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/model_1_SK-learn_52_1.png" src="_images/model_1_SK-learn_52_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sns.histplot(data=df, x=&quot;ratingprice&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_train</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;sellingprice&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;sellingprice&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/model_1_SK-learn_54_1.png" src="_images/model_1_SK-learn_54_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Kategorisch</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;brand&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;brand&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/model_1_SK-learn_55_1.png" src="_images/model_1_SK-learn_55_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/model_1_SK-learn_56_1.png" src="_images/model_1_SK-learn_56_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fehlende-daten">
+<h1>Fehlende Daten<a class="headerlink" href="#fehlende-daten" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show missing values (missing values - if present - will be displayed in yellow )</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df_train</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">yticklabels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_1_SK-learn_58_0.png" src="_images/model_1_SK-learn_58_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># absolute number of missing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_train</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year            0
+brand           0
+model           0
+type            0
+drivetrain      0
+state           0
+condition       0
+miles           0
+color           0
+interior        0
+seller          0
+saledate        0
+sellingprice    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># percentage of missing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_train</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year            0.0
+brand           0.0
+model           0.0
+type            0.0
+drivetrain      0.0
+state           0.0
+condition       0.0
+miles           0.0
+color           0.0
+interior        0.0
+seller          0.0
+saledate        0.0
+sellingprice    0.0
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-pipeline">
+<h1>Data Pipeline<a class="headerlink" href="#data-pipeline" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">RobustScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build numeric pipeline</span>
+<span class="n">num_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">RobustScaler</span><span class="p">())</span>
+    <span class="p">])</span>
+
+<span class="n">num_pipeline</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipeline(steps=[(&#39;imputer&#39;, SimpleImputer(strategy=&#39;median&#39;)),
+                (&#39;scaler&#39;, RobustScaler())])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build categorical pipeline</span>
+<span class="n">cat_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="s1">&#39;missing&#39;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;onehot&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))</span>
+    <span class="p">])</span>
+    
+<span class="n">cat_pipeline</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipeline(steps=[(&#39;imputer&#39;,
+                 SimpleImputer(fill_value=&#39;missing&#39;, strategy=&#39;constant&#39;)),
+                (&#39;onehot&#39;, OneHotEncoder(handle_unknown=&#39;ignore&#39;))])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create full pipeline</span>
+<span class="n">full_pipeline</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
+    <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="n">num_pipeline</span><span class="p">,</span> <span class="n">feat_num</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">cat_pipeline</span><span class="p">,</span> <span class="n">feat_cat</span><span class="p">)])</span>
+
+
+<span class="n">full_pipeline</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ColumnTransformer(transformers=[(&#39;num&#39;,
+                                 Pipeline(steps=[(&#39;imputer&#39;,
+                                                  SimpleImputer(strategy=&#39;median&#39;)),
+                                                 (&#39;scaler&#39;, RobustScaler())]),
+                                 [&#39;miles&#39;]),
+                                (&#39;cat&#39;,
+                                 Pipeline(steps=[(&#39;imputer&#39;,
+                                                  SimpleImputer(fill_value=&#39;missing&#39;,
+                                                                strategy=&#39;constant&#39;)),
+                                                 (&#39;onehot&#39;,
+                                                  OneHotEncoder(handle_unknown=&#39;ignore&#39;))]),
+                                 [&#39;year&#39;, &#39;brand&#39;, &#39;model&#39;, &#39;type&#39;,
+                                  &#39;drivetrain&#39;, &#39;state&#39;, &#39;condition&#39;, &#39;color&#39;,
+                                  &#39;interior&#39;, &#39;seller&#39;, &#39;saledate&#39;])])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="model">
+<h1>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="model-training">
+<h2>Model Training<a class="headerlink" href="#model-training" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+
+<span class="c1"># Use pipeline with linear regression model</span>
+<span class="n">lm_pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">(</span><span class="s1">&#39;full_pipeline&#39;</span><span class="p">,</span> <span class="n">full_pipeline</span><span class="p">),</span>
+            <span class="p">(</span><span class="s1">&#39;lm&#39;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())</span>
+                         <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">set_config</span>
+<span class="c1"># Show pipeline as diagram</span>
+<span class="n">set_config</span><span class="p">(</span><span class="n">display</span><span class="o">=</span><span class="s2">&quot;diagram&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fit model</span>
+<span class="n">lm_pipe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Obtain model coefficients</span>
+<span class="n">lm_pipe</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;lm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">r</span><span class="o">/</span><span class="n">ym9jxwt15b70q43zrdvqgmdh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_23523</span><span class="o">/</span><span class="mf">1751521163.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Fit model</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">lm_pipe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Obtain model coefficients</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, **fit_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_final_estimator</span> <span class="o">!=</span> <span class="s2">&quot;passthrough&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span>                 <span class="n">fit_params_last_step</span> <span class="o">=</span> <span class="n">fit_params_steps</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+<span class="ne">--&gt; </span><span class="mi">394</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_final_estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params_last_step</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">395</span> 
+<span class="g g-Whitespace">    </span><span class="mi">396</span>         <span class="k">return</span> <span class="bp">self</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/sklearn/linear_model/_base.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span> 
+<span class="g g-Whitespace">    </span><span class="mi">705</span>             <span class="k">if</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">706</span>                 <span class="n">out</span> <span class="o">=</span> <span class="n">sparse_lsqr</span><span class="p">(</span><span class="n">X_centered</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">coef_</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_residues</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/linalg/isolve/lsqr.py</span> in <span class="ni">lsqr</span><span class="nt">(A, b, damp, atol, btol, conlim, iter_lim, show, calc_var, x0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span>         <span class="c1">#     beta*u  =  a*v   -  alfa*u,</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span>         <span class="c1">#     alfa*v  =  A&#39;*u  -  beta*v.</span>
+<span class="ne">--&gt; </span><span class="mi">413</span>         <span class="n">u</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">matvec</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">-</span> <span class="n">alfa</span> <span class="o">*</span> <span class="n">u</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span>         <span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/linalg/interface.py</span> in <span class="ni">matvec</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;dimension mismatch&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span> 
+<span class="ne">--&gt; </span><span class="mi">232</span>         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matvec</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span> 
+<span class="g g-Whitespace">    </span><span class="mi">234</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">):</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/linalg/interface.py</span> in <span class="ni">_matvec</span><span class="nt">(self, x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span> 
+<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="k">def</span> <span class="nf">_matvec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">530</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__matvec_impl</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span> 
+<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="k">def</span> <span class="nf">_rmatvec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/sklearn/linear_model/_base.py</span> in <span class="ni">matvec</span><span class="nt">(b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">694</span> 
+<span class="g g-Whitespace">    </span><span class="mi">695</span>             <span class="k">def</span> <span class="nf">matvec</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">696</span>                 <span class="k">return</span> <span class="n">X</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">b</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X_offset_scale</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">697</span> 
+<span class="g g-Whitespace">    </span><span class="mi">698</span>             <span class="k">def</span> <span class="nf">rmatvec</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/base.py</span> in <span class="ni">dot</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span> 
+<span class="g g-Whitespace">    </span><span class="mi">358</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">359</span><span class="s2">         return self * other</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span><span class="s2">     def power(self, n, dtype=None):</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/base.py</span> in <span class="ni">__mul__</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="s2">             # Fast path for the most common case</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="s2">             if other.shape == (N,):</span>
+<span class="ne">--&gt; </span><span class="mi">467</span><span class="s2">                 return self._mul_vector(other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span><span class="s2">             elif other.shape == (N, 1):</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="s2">                 return self._mul_vector(other.ravel()).reshape(M, 1)</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/compressed.py</span> in <span class="ni">_mul_vector</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">    </span><span class="mi">476</span><span class="s2">         # csr_matvec or csc_matvec</span>
+<span class="g g-Whitespace">    </span><span class="mi">477</span><span class="s2">         fn = getattr(_sparsetools, self.format + &#39;_matvec&#39;)</span>
+<span class="ne">--&gt; </span><span class="mi">478</span><span class="s2">         fn(M, N, self.indptr, self.indices, self.data, other, result)</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span><span class="s2">         return result</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="model-evaluation">
+<h1>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+
+
+<span class="c1"># obtain predictions for training data</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">lm_pipe</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="c1"># R squared</span>
+<span class="n">r2_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span> 
+
+<span class="c1"># MSE</span>
+<span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="c1"># RMSE</span>
+<span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># MAE</span>
+<span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2140.0031063445413
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">residplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_1_SK-learn_71_0.png" src="_images/model_1_SK-learn_71_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="model-tuning">
+<h1>Model Tuning<a class="headerlink" href="#model-tuning" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Pipeline</span>
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;scaler&quot;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span> 
+    <span class="p">(</span><span class="s2">&quot;pca&quot;</span><span class="p">,</span> <span class="n">PCA</span><span class="p">()),</span> 
+    <span class="p">(</span><span class="s2">&quot;logistic&quot;</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))])</span>
+
+<span class="c1"># Data</span>
+<span class="n">X_digits</span><span class="p">,</span> <span class="n">y_digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Parameters of pipelines can be set using ‘__’ separated parameter names:</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;pca__n_components&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
+    <span class="s2">&quot;logistic__C&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="c1"># Gridsearch</span>
+<span class="n">search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_digits</span><span class="p">,</span> <span class="n">y_digits</span><span class="p">)</span>
+
+<span class="c1"># Show results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameter (CV score=</span><span class="si">%0.3f</span><span class="s2">):&quot;</span> <span class="o">%</span> <span class="n">search</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best parameter (CV score=0.924):
+{&#39;logistic__C&#39;: 0.046415888336127774, &#39;pca__n_components&#39;: 60}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluate-best-model">
+<h1>Evaluate best model<a class="headerlink" href="#evaluate-best-model" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="evaluate-on-test-set">
+<h1>Evaluate on test set<a class="headerlink" href="#evaluate-on-test-set" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">lm_pipe</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MSE:&#39;</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RMSE:&#39;</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MSE: 12413603.671531325
+RMSE: 3523.294434408133
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="04_models.html" title="previous page">Models</a>
+    <a class='right-next' id="next-link" href="model_2_SK-learn.html" title="next page">SK-learn Model</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hendrik Pfeifer<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
