@@ -6,10 +6,10 @@ format: jb-book
 root: index
 parts:
   - caption: Welcome
-  chapters:
+  sections:
     - file: welcome
   - caption: Content
-    chapters:
+    sections:
     - file: content 
         sections:
         - file: 01_business_case
