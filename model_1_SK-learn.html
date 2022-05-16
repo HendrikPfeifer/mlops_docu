@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>First Model &#8212; MLOps Project SoSe 2022 - Documentation</title>
+    <title>1st SK-learn model &#8212; MLOps Project SoSe 2022 - Documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,6 @@
     <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SK-learn Model" href="model_2_SK-learn.html" />
-    <link rel="prev" title="Models" href="04_models.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -91,17 +89,17 @@
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="content.html">
    Content of the documentation
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="01_business_case.html">
      Business Case
@@ -117,29 +115,19 @@
      Data preperation
     </a>
    </li>
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="04_models.html">
      Models
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       First Model
-      </a>
-     </li>
+    <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="model_2_SK-learn.html">
-       SK-learn Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model_1_Keras.html">
-       Load Packages
+      <a class="reference internal" href="05_deployment.html">
+       Deployment
       </a>
      </li>
     </ul>
@@ -252,7 +240,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   First Model
+   1st SK-learn model
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -396,8 +384,8 @@
         
               <div>
                 
-  <div class="section" id="first-model">
-<h1>First Model<a class="headerlink" href="#first-model" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="st-sk-learn-model">
+<h1>1st SK-learn model<a class="headerlink" href="#st-sk-learn-model" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="first-try-including-sk-learn-model-and-eda">
 <h2>First try including sk-learn model and EDA<a class="headerlink" href="#first-try-including-sk-learn-model-and-eda" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -1779,7 +1767,9 @@ sellingprice  12500.0   6500.0   9950.0    13200.0  11600.0   9750.0  12450.0
 color             red   silver  turquoise    white   yellow        —  
 miles         46274.0  59405.0    89541.0  47970.0  67649.0  32814.0  
 sellingprice  11700.0  10700.0     7400.0  13200.0  10500.0  16000.0  
-interior        beige    black     blue    brown  burgundy     gold     gray  \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interior        beige    black     blue    brown  burgundy     gold     gray  \
 miles         58023.0  40816.0  99307.0  51089.0   51998.5  72910.0  66996.5   
 sellingprice  12000.0  13700.0   4600.0  18700.0   14850.0   9900.0  10100.0   
 
@@ -1790,9 +1780,7 @@ sellingprice   9000.0    28750.0  16400.0  11300.0  20900.0   9200.0  11100.0
 interior        white   yellow        —  
 miles         43255.0  31684.0  58799.0  
 sellingprice  16400.0   9600.0  10600.0  
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>seller        1 cochran of monroeville  101motors  143 auto sales inc  \
+seller        1 cochran of monroeville  101motors  143 auto sales inc  \
 miles                         106396.0    98491.0             93990.0   
 sellingprice                    4200.0     3750.0              4000.0   
 
@@ -2302,7 +2290,7 @@ dtype: float64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">r</span><span class="o">/</span><span class="n">ym9jxwt15b70q43zrdvqgmdh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_24405</span><span class="o">/</span><span class="mf">1751521163.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">r</span><span class="o">/</span><span class="n">ym9jxwt15b70q43zrdvqgmdh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_25697</span><span class="o">/</span><span class="mf">1751521163.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> 
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Fit model</span>
 <span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">lm_pipe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -2324,53 +2312,11 @@ dtype: float64
 <span class="g g-Whitespace">    </span><span class="mi">708</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_residues</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 
 <span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/linalg/isolve/lsqr.py</span> in <span class="ni">lsqr</span><span class="nt">(A, b, damp, atol, btol, conlim, iter_lim, show, calc_var, x0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span>             <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>             <span class="n">anorm</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">anorm</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">alfa</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">beta</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dampsq</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">419</span>             <span class="n">v</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">rmatvec</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">-</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">v</span>
-<span class="g g-Whitespace">    </span><span class="mi">420</span>             <span class="n">alfa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span>             <span class="k">if</span> <span class="n">alfa</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-
-<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/linalg/interface.py</span> in <span class="ni">rmatvec</span><span class="nt">(self, x)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;dimension mismatch&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span> 
-<span class="ne">--&gt; </span><span class="mi">279</span>         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rmatvec</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span> 
-<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">):</span>
-
-<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/linalg/interface.py</span> in <span class="ni">_rmatvec</span><span class="nt">(self, x)</span>
-<span class="g g-Whitespace">    </span><span class="mi">534</span>         <span class="k">if</span> <span class="n">func</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span>             <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;rmatvec is not defined&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">536</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rmatvec_impl</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> 
-<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="k">def</span> <span class="nf">_rmatmat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-
-<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/sklearn/linear_model/_base.py</span> in <span class="ni">rmatvec</span><span class="nt">(b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">697</span> 
-<span class="g g-Whitespace">    </span><span class="mi">698</span>             <span class="k">def</span> <span class="nf">rmatvec</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">699</span>                 <span class="k">return</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">X_offset_scale</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span> 
-<span class="g g-Whitespace">    </span><span class="mi">701</span>             <span class="n">X_centered</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">LinearOperator</span><span class="p">(</span>
-
-<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/base.py</span> in <span class="ni">dot</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span> 
-<span class="g g-Whitespace">    </span><span class="mi">358</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">359</span><span class="s2">         return self * other</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span><span class="s2">     def power(self, n, dtype=None):</span>
-
-<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/base.py</span> in <span class="ni">__mul__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="s2">             # Fast path for the most common case</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="s2">             if other.shape == (N,):</span>
-<span class="ne">--&gt; </span><span class="mi">467</span><span class="s2">                 return self._mul_vector(other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span><span class="s2">             elif other.shape == (N, 1):</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="s2">                 return self._mul_vector(other.ravel()).reshape(M, 1)</span>
-
-<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/scipy/sparse/compressed.py</span> in <span class="ni">_mul_vector</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span><span class="s2">         # csr_matvec or csc_matvec</span>
-<span class="g g-Whitespace">    </span><span class="mi">477</span><span class="s2">         fn = getattr(_sparsetools, self.format + &#39;_matvec&#39;)</span>
-<span class="ne">--&gt; </span><span class="mi">478</span><span class="s2">         fn(M, N, self.indptr, self.indices, self.data, other, result)</span>
-<span class="g g-Whitespace">    </span><span class="mi">479</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span><span class="s2">         return result</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span>         <span class="c1">#     beta*u  =  a*v   -  alfa*u,</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span>         <span class="c1">#     alfa*v  =  A&#39;*u  -  beta*v.</span>
+<span class="ne">--&gt; </span><span class="mi">413</span>         <span class="n">u</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">matvec</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">-</span> <span class="n">alfa</span> <span class="o">*</span> <span class="n">u</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span>         <span class="n">beta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span> 
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -2516,8 +2462,6 @@ RMSE: 3523.294434408133
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="04_models.html" title="previous page">Models</a>
-    <a class='right-next' id="next-link" href="model_2_SK-learn.html" title="next page">SK-learn Model</a>
 
         </div>
         

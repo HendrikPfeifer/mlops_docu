@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>SK-learn Model &#8212; MLOps Project SoSe 2022 - Documentation</title>
+    <title>2nd SK-learn model &#8212; MLOps Project SoSe 2022 - Documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,6 @@
     <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Load Packages" href="model_1_Keras.html" />
-    <link rel="prev" title="First Model" href="model_1_SK-learn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -91,17 +89,17 @@
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="content.html">
    Content of the documentation
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="01_business_case.html">
      Business Case
@@ -117,29 +115,19 @@
      Data preperation
     </a>
    </li>
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="04_models.html">
      Models
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="model_1_SK-learn.html">
-       First Model
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       SK-learn Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="model_1_Keras.html">
-       Load Packages
+      <a class="reference internal" href="05_deployment.html">
+       Deployment
       </a>
      </li>
     </ul>
@@ -252,7 +240,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   SK-learn Model
+   2nd SK-learn model
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -350,8 +338,8 @@
         
               <div>
                 
-  <div class="section" id="sk-learn-model">
-<h1>SK-learn Model<a class="headerlink" href="#sk-learn-model" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="nd-sk-learn-model">
+<h1>2nd SK-learn model<a class="headerlink" href="#nd-sk-learn-model" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -1429,46 +1417,46 @@ Missing values Y: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e {color: black;background-color: white;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e pre{padding: 0;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-toggleable {background-color: white;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-estimator:hover {background-color: #d4ebff;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-item {z-index: 1;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-parallel-item:only-child::after {width: 0;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-344ab530-14c4-41e4-98e5-93d6cf3c695e div.sk-text-repr-fallback {display: none;}</style><div id="sk-344ab530-14c4-41e4-98e5-93d6cf3c695e" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
+<div class="output text_html"><style>#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 {color: black;background-color: white;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 pre{padding: 0;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-toggleable {background-color: white;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-estimator:hover {background-color: #d4ebff;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-item {z-index: 1;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-parallel-item:only-child::after {width: 0;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-ea706a6f-9d89-4acd-a0d2-d04580168532 div.sk-text-repr-fallback {display: none;}</style><div id="sk-ea706a6f-9d89-4acd-a0d2-d04580168532" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
                  ColumnTransformer(transformers=[(&#x27;num&#x27;,
                                                   Pipeline(steps=[(&#x27;imputer&#x27;,
                                                                    SimpleImputer(strategy=&#x27;median&#x27;)),
                                                                   (&#x27;scaler&#x27;,
                                                                    StandardScaler())]),
-                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f939b3f5690&gt;),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7fef5dc6ead0&gt;),
                                                  (&#x27;cat&#x27;,
                                                   Pipeline(steps=[(&#x27;imputer&#x27;,
                                                                    SimpleImputer(fill_value=&#x27;missing&#x27;,
                                                                                  strategy=&#x27;constant&#x27;)),
                                                                   (&#x27;onehot&#x27;,
                                                                    OneHotEncoder(handle_unknown=&#x27;ignore&#x27;))]),
-                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f939b425d10&gt;)])),
-                (&#x27;lm&#x27;, LinearRegression())])</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="a691fb49-bc19-4b05-a3cf-53db9dab117b" type="checkbox" ><label for="a691fb49-bc19-4b05-a3cf-53db9dab117b" class="sk-toggleable__label sk-toggleable__label-arrow">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7fef5dc6eb90&gt;)])),
+                (&#x27;lm&#x27;, LinearRegression())])</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="3f495f6f-7a0e-4ebb-a366-745c0cca076c" type="checkbox" ><label for="3f495f6f-7a0e-4ebb-a366-745c0cca076c" class="sk-toggleable__label sk-toggleable__label-arrow">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[(&#x27;preprocessor&#x27;,
                  ColumnTransformer(transformers=[(&#x27;num&#x27;,
                                                   Pipeline(steps=[(&#x27;imputer&#x27;,
                                                                    SimpleImputer(strategy=&#x27;median&#x27;)),
                                                                   (&#x27;scaler&#x27;,
                                                                    StandardScaler())]),
-                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f939b3f5690&gt;),
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7fef5dc6ead0&gt;),
                                                  (&#x27;cat&#x27;,
                                                   Pipeline(steps=[(&#x27;imputer&#x27;,
                                                                    SimpleImputer(fill_value=&#x27;missing&#x27;,
                                                                                  strategy=&#x27;constant&#x27;)),
                                                                   (&#x27;onehot&#x27;,
                                                                    OneHotEncoder(handle_unknown=&#x27;ignore&#x27;))]),
-                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f939b425d10&gt;)])),
-                (&#x27;lm&#x27;, LinearRegression())])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c973d238-9e44-4394-a752-94809d14da77" type="checkbox" ><label for="c973d238-9e44-4394-a752-94809d14da77" class="sk-toggleable__label sk-toggleable__label-arrow">preprocessor: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[(&#x27;num&#x27;,
+                                                  &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7fef5dc6eb90&gt;)])),
+                (&#x27;lm&#x27;, LinearRegression())])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e67677ec-0e2e-4837-a499-626a9ac594d6" type="checkbox" ><label for="e67677ec-0e2e-4837-a499-626a9ac594d6" class="sk-toggleable__label sk-toggleable__label-arrow">preprocessor: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[(&#x27;num&#x27;,
                                  Pipeline(steps=[(&#x27;imputer&#x27;,
                                                   SimpleImputer(strategy=&#x27;median&#x27;)),
                                                  (&#x27;scaler&#x27;, StandardScaler())]),
-                                 &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f939b3f5690&gt;),
+                                 &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7fef5dc6ead0&gt;),
                                 (&#x27;cat&#x27;,
                                  Pipeline(steps=[(&#x27;imputer&#x27;,
                                                   SimpleImputer(fill_value=&#x27;missing&#x27;,
                                                                 strategy=&#x27;constant&#x27;)),
                                                  (&#x27;onehot&#x27;,
                                                   OneHotEncoder(handle_unknown=&#x27;ignore&#x27;))]),
-                                 &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f939b425d10&gt;)])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="aea27fe7-3598-4703-8cd9-ed44beddfb8a" type="checkbox" ><label for="aea27fe7-3598-4703-8cd9-ed44beddfb8a" class="sk-toggleable__label sk-toggleable__label-arrow">num</label><div class="sk-toggleable__content"><pre>&lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f939b3f5690&gt;</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="3ba859c1-e97e-4a7f-9509-035f151c6ea4" type="checkbox" ><label for="3ba859c1-e97e-4a7f-9509-035f151c6ea4" class="sk-toggleable__label sk-toggleable__label-arrow">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy=&#x27;median&#x27;)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="4a7ba92c-a0a6-4229-9297-ee34e99848e1" type="checkbox" ><label for="4a7ba92c-a0a6-4229-9297-ee34e99848e1" class="sk-toggleable__label sk-toggleable__label-arrow">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="4e38e6ba-1de2-43ef-9f9e-394dd17d4824" type="checkbox" ><label for="4e38e6ba-1de2-43ef-9f9e-394dd17d4824" class="sk-toggleable__label sk-toggleable__label-arrow">cat</label><div class="sk-toggleable__content"><pre>&lt;sklearn.compose._column_transformer.make_column_selector object at 0x7f939b425d10&gt;</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="6b210c59-bea4-4ffd-8930-1180d6b16d03" type="checkbox" ><label for="6b210c59-bea4-4ffd-8930-1180d6b16d03" class="sk-toggleable__label sk-toggleable__label-arrow">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value=&#x27;missing&#x27;, strategy=&#x27;constant&#x27;)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="0f8d1347-dabe-4ea0-9e55-a776c5b9c8a0" type="checkbox" ><label for="0f8d1347-dabe-4ea0-9e55-a776c5b9c8a0" class="sk-toggleable__label sk-toggleable__label-arrow">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9c68001d-81a7-4419-b44d-8ef31ca13aa7" type="checkbox" ><label for="9c68001d-81a7-4419-b44d-8ef31ca13aa7" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div></div></div>
+                                 &lt;sklearn.compose._column_transformer.make_column_selector object at 0x7fef5dc6eb90&gt;)])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="d33927d1-95a4-40b6-a1d3-7969250a260d" type="checkbox" ><label for="d33927d1-95a4-40b6-a1d3-7969250a260d" class="sk-toggleable__label sk-toggleable__label-arrow">num</label><div class="sk-toggleable__content"><pre>&lt;sklearn.compose._column_transformer.make_column_selector object at 0x7fef5dc6ead0&gt;</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9b3bac88-b868-408e-bc80-a67739fa7701" type="checkbox" ><label for="9b3bac88-b868-408e-bc80-a67739fa7701" class="sk-toggleable__label sk-toggleable__label-arrow">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy=&#x27;median&#x27;)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9590d5b1-0fd2-49cc-adec-3350d083a203" type="checkbox" ><label for="9590d5b1-0fd2-49cc-adec-3350d083a203" class="sk-toggleable__label sk-toggleable__label-arrow">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="0f23531b-017d-48a0-889b-3ba7b47ea77c" type="checkbox" ><label for="0f23531b-017d-48a0-889b-3ba7b47ea77c" class="sk-toggleable__label sk-toggleable__label-arrow">cat</label><div class="sk-toggleable__content"><pre>&lt;sklearn.compose._column_transformer.make_column_selector object at 0x7fef5dc6eb90&gt;</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="5552620b-e12b-4760-a68b-ac02dc9cc7b1" type="checkbox" ><label for="5552620b-e12b-4760-a68b-ac02dc9cc7b1" class="sk-toggleable__label sk-toggleable__label-arrow">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value=&#x27;missing&#x27;, strategy=&#x27;constant&#x27;)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="fb9ddbcf-3226-4489-a831-2a776a35ec99" type="checkbox" ><label for="fb9ddbcf-3226-4489-a831-2a776a35ec99" class="sk-toggleable__label sk-toggleable__label-arrow">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9ccb3137-e2f8-484e-a34a-d77b5fcee65f" type="checkbox" ><label for="9ccb3137-e2f8-484e-a34a-d77b5fcee65f" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1637,7 +1625,7 @@ Missing values Y: 0
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">r</span><span class="o">/</span><span class="n">ym9jxwt15b70q43zrdvqgmdh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_24431</span><span class="o">/</span><span class="mf">548667493.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">r</span><span class="o">/</span><span class="n">ym9jxwt15b70q43zrdvqgmdh0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_25719</span><span class="o">/</span><span class="mf">548667493.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">py</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
@@ -2343,8 +2331,6 @@ Missing values: 0
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="model_1_SK-learn.html" title="previous page">First Model</a>
-    <a class='right-next' id="next-link" href="model_1_Keras.html" title="next page">Load Packages</a>
 
         </div>
         
