@@ -14,10 +14,5 @@
       - file: model_1_SK-learn
       - file: model_2_SK-learn
       - file: model_1_Keras
-  sections:
-  - file: 05_deployment
-
-
-
-
-
+        sections:
+        - file: 05_deployment
