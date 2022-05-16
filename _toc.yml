@@ -5,10 +5,8 @@
 
 parts:
   - caption: Welcome
-  chapters:
     - file: welcome
   - caption: Content
-    chapters:
     - file: content 
         sections:
         - file: 01_business_case
