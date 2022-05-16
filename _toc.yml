@@ -2,9 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 
-format: jb-book
-root: index
-parts:
+
+
   - caption: Welcome
   sections:
     - file: welcome
