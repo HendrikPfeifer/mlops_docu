@@ -3,24 +3,19 @@
 #
 
 
-
-  - caption: Welcome
+- file: welcome
+- file: content
   sections:
-    - file: welcome
-  - caption: Content
-    sections:
-    - file: content 
-        sections:
-        - file: 01_business_case
-        - file: 02_data_analysis
-        - file: 03_data_preperation
-        - file: 04_models
-          sections:
-          - file: model_1_SK-learn
-          - file: model_2_SK-learn
-          - file: model_1_Keras
-        sections:
-        - file: 05_deployment
+    - file: 01_business_case
+    - file: 02_data_analysis
+    - file: 03_data_preperation
+    - file: 04_models
+      sections:
+      - file: model_1_SK-learn
+      - file: model_2_SK-learn
+      - file: model_1_Keras
+      sections:
+      - file: 05_deployment
 
 
 
